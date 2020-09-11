@@ -19,8 +19,8 @@ const ChildContainer = styled.main`
   margin-top: 97px;
   background: #fff;
   width: 90%;
-  margin: 0 auto;
   padding:0;
+  margin: 97px auto;
 
   clip-path:
     polygon(
