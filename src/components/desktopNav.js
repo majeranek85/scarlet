@@ -1,95 +1,106 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { theme } from '../utils/theme'
+import { breakpoints } from '../utils/breakpoints'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faCircle
-} from '@fortawesome/free-solid-svg-icons'
+import { faCircle } from '@fortawesome/free-solid-svg-icons'
 
 const StyledHeader = styled.header`
-  display: flex;
-  width: 80%;
-  z-index:10;
-  padding: 1rem;
-  background: ${theme.primary};
-  margin: 0 auto;
-  text-transform: uppercase;
-  font-weight: 500;
+  display: none;
 
-  a {
-    text-decoration: none;
-    color: ${theme.text};
-  }
-
-
-  ul {
+  @media ${breakpoints.lg} {
+    position: fixed;
+    top: 0;
     display: flex;
-    margin: 0 0 0 auto ;
-    justify-content: space-around;
-    list-style-type: none;
-    font-size: 15px;
+    width: 100%;
+    z-index:10;
+    padding: 1rem;
+    background: ${theme.primary};
+    text-transform: uppercase;
+    font-weight: 500;
 
-    li {
-      margin-bottom: 0;
-      margin-left: 1.5rem;
+    a {
+      text-decoration: none;
+      color: ${theme.text};
+    }
 
-      a {
-        position: relative;
-        display: block;
+    ul {
+      display: flex;
+      margin: 0 0 0 auto ;
+      justify-content: space-around;
+      font-size: 15px;
 
-        svg {
-          position: absolute;
-          top: 50%;
-          right: 50%;
-          transform: translate(50%, -50%);
+      li {
+        list-style-type: none;
+        margin-bottom: 0;
+        margin-left: 1.5rem;
+
+        a {
+          position: relative;
           display: block;
-          color: ${theme.coral};
-          z-index: -10;
-          display: none;
+
+          svg {
+            position: absolute;
+            top: 50%;
+            right: 50%;
+            transform: translate(50%, -50%);
+            opacity: 0;
+            transition: opacity 300ms;;
+            color: ${theme.coral};
+            z-index: -10;
+          }
         }
-      }
 
-      a:hover,
-      a.active {
-        svg {
-          display: block;
+        a:hover,
+        a.active {
+          svg {
+            opacity: 1;
+          }
         }
       }
     }
   }
 `
 
+const StyledWrapper = styled.div`
+   width: 80%;
+   margin: 0 auto;
+   display: flex;
+`
+
 const DesktopNavMenu = () => {
   return (
     <StyledHeader>
-      <Link to='/' activeClassName='active'>Scarlet Studio Urody</Link>
-      <ul>
-        <li>
-          <Link to='/' activeClassName='active'>
-            <FontAwesomeIcon icon={faCircle} size='2x' />
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to='/treatments' activeClassName='active'>
-            <FontAwesomeIcon icon={faCircle} size='2x' />
-            Zabiegi
-          </Link>
-        </li>
-        <li>
-          <Link to='/gallery' activeClassName='active'>
-            <FontAwesomeIcon icon={faCircle} size='2x' />
-            Galeria
-          </Link>
-        </li>
-        <li>
-          <Link to='/contact' activeClassName='active'>
-            <FontAwesomeIcon icon={faCircle} size='2x' />
-            Kontakt
-          </Link>
-        </li>
-      </ul>
+      <StyledWrapper>
+        <Link to='/' activeClassName='active'>Scarlet Studio Urody</Link>
+        <ul>
+          <li>
+            <Link to='/' activeClassName='active'>
+              <FontAwesomeIcon icon={faCircle} size='2x' />
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to='/treatments' activeClassName='active'>
+              <FontAwesomeIcon icon={faCircle} size='2x' />
+              Zabiegi
+            </Link>
+          </li>
+          <li>
+            <Link to='/gallery' activeClassName='active'>
+              <FontAwesomeIcon icon={faCircle} size='2x' />
+              Galeria
+            </Link>
+          </li>
+          <li>
+            <Link to='/contact' activeClassName='active'>
+              <FontAwesomeIcon icon={faCircle} size='2x' />
+              Kontakt
+            </Link>
+          </li>
+        </ul>
+      </StyledWrapper>
     </StyledHeader>
   )
 }
