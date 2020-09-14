@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
-import styled from 'styled-components'
-import { breakpoints } from '../utils/breakpoints'
-import { theme } from '../utils/theme'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle } from '@fortawesome/free-solid-svg-icons'
+import React, { useState } from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { breakpoints } from '../utils/breakpoints';
+import { theme } from '../utils/theme';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const MobileNavMenu = () => {
-  const [menuOpen, toggleMenuOpen] = useState(false)
+  const [menuOpen, toggleMenuOpen] = useState(false);
 
   return (
     <MenuBar>
@@ -48,10 +48,12 @@ const MobileNavMenu = () => {
         </ul>
       </MenuLinks>
     </MenuBar>
-  )
+  );
 };
 
 export default MobileNavMenu;
+
+// style
 
 const MenuBar = styled.header`
   @media ${breakpoints.lg} {
@@ -75,13 +77,14 @@ const MenuBar = styled.header`
     text-transform: uppercase;
     font-weight: 500;
   }
-`
+`;
 
 const MenuIconContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-`
+`;
+
 const MenuIcon = styled.button`
   cursor: pointer;
   background: transparent;
@@ -103,19 +106,21 @@ const MenuIcon = styled.button`
     transition: opacity 300ms, transform 300ms;
 
     :first-child {
-      transform: ${({ menuOpen }) => menuOpen ? `rotate(45deg)` : `rotate(0)`};
+      transform: ${({ menuOpen }) => (menuOpen ? `rotate(45deg)` : `rotate(0)`)};
     }
 
     :nth-child(2) {
-      opacity: ${({ menuOpen }) => menuOpen ? `0` : `1`};
-      transform: ${({ menuOpen }) => menuOpen ? `translateX(-20px)` : `translateX(0)`};
+      opacity: ${({ menuOpen }) => (menuOpen ? `0` : `1`)};
+      transform: ${({ menuOpen }) =>
+        menuOpen ? `translateX(-20px)` : `translateX(0)`};
     }
 
     :nth-child(3) {
-      transform: ${({ menuOpen }) => menuOpen ? `rotate(-45deg)` : `rotate(0)`};
+      transform: ${({ menuOpen }) => (menuOpen ? `rotate(-45deg)` : `rotate(0)`)};
     }
   }
-`
+`;
+
 const MenuLinks = styled.nav`
   display: flex;
   flex-direction: column;
@@ -129,7 +134,7 @@ const MenuLinks = styled.nav`
   height: 100vh;
   width: 100%;
   transition: transform 300ms;
-  transform: ${({ menuOpen }) => menuOpen ? `translateX(0)` : `translateX(100%)`};
+  transform: ${({ menuOpen }) => (menuOpen ? `translateX(0)` : `translateX(100%)`)};
 
   ul {
     margin: 0;
@@ -171,4 +176,4 @@ const MenuLinks = styled.nav`
       }
     }
   }
-`
+`;
