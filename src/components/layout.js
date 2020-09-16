@@ -49,7 +49,7 @@ const PageContainer = styled.div`
 `;
 const ChildContainer = styled.main`
   position: relative;
-  flex-grow: 1;
+  //flex-grow: 1;
   background: #fff;
   width: 100%;
   padding: 0;

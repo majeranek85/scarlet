@@ -6,10 +6,10 @@ import MobileNavMenu from './mobileNav';
 
 const Header = ({ siteTitle }) => {
   return (
-    <>
+    <div className='header-fragment'>
       <DesktopNavMenu />
       <MobileNavMenu />
-    </>
+    </div>
   );
 };
 
