@@ -21,6 +21,8 @@ const HeroAnimatedText = () => {
 
 export default HeroAnimatedText;
 
+// style
+
 const StyledWrapper = styled.div`
   text-transform: uppercase;
 
@@ -30,6 +32,7 @@ const StyledWrapper = styled.div`
     font-weight: 700;
     margin-bottom: 5px;
     transition: all 0.5s ease-out;
+    text-shadow: 3px 3px 5px gray;
 
     span {
       color: #262626;
