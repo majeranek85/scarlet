@@ -56,9 +56,10 @@ export default MobileNavMenu;
 // style
 
 const MenuBar = styled.header`
-  @media ${breakpoints.lg} {
+  @media ${breakpoints.md} {
     display: none;
   }
+
   height: 3rem;
   position: fixed;
   width: 100%;
@@ -69,6 +70,7 @@ const MenuBar = styled.header`
   justify-content: space-between;
   align-items: center;
   padding: 0.25rem;
+  box-shadow: 0px 0px 10px 0px #aa9c9d;
 
   a {
     position: relative;

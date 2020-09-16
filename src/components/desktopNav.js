@@ -51,7 +51,7 @@ export default DesktopNavMenu;
 const StyledHeader = styled.header`
   display: none;
 
-  @media ${breakpoints.lg} {
+  @media ${breakpoints.md} {
     position: fixed;
     top: 0;
     display: flex;
@@ -61,6 +61,8 @@ const StyledHeader = styled.header`
     background: ${theme.primary};
     text-transform: uppercase;
     font-weight: 500;
+    height: 3rem;
+    box-shadow: 0px 0px 10px 0px #aa9c9d;
 
     a {
       text-decoration: none;

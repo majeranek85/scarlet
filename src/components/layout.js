@@ -45,23 +45,15 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: ${theme.primary};
+  background: ${theme.secondary};
 `;
 const ChildContainer = styled.main`
   position: relative;
   flex-grow: 1;
-  margin-top: 97px;
   background: #fff;
-  width: 90%;
+  width: 100%;
   padding: 0;
-  margin: 97px auto;
+  margin: 3rem auto;
 
-  clip-path: polygon(
-    0% 40px,
-    /* top left */ 40px 0%,
-    /* top left */ 100% 0%,
-    /* top right */ 100% 100%,
-    /* bottom right */ 0% 100%,
-    /* bottom left */ 0% 100% /* bottom left */
-  );
+  //clip-path: polygon(0% 40px, 40px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
 `;
