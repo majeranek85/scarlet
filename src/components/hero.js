@@ -25,14 +25,14 @@ const Hero = () => {
       <div className='text-wrapper'>
         <HeroAnimatedText />
         <div className='socials'>
-          <Button href='https://instagram.com' target='_blank'>
+          {/*<Button href='https://instagram.com' target='_blank'>
             <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             <span className='visually-hidden'>Instagram</span>
           </Button>
           <Button href='https://facebook.com' target='_blank'>
             <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
             <span className='visually-hidden'>Facebook</span>
-          </Button>
+          </Button>*/}
         </div>
       </div>
     </StyledContainer>
