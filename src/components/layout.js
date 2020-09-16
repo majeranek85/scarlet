@@ -20,9 +20,9 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <PageContainer>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <ChildContainer>{children}</ChildContainer>
+      <PageContainer className='page-container'>
+        <Header siteTitle={data.site.siteMetadata.title} className='header-container' />
+        <ChildContainer className='page-content-container'>{children}</ChildContainer>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
