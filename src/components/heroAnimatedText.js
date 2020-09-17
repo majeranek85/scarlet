@@ -30,7 +30,7 @@ const StyledWrapper = styled.div`
     font-size: 30px;
     font-family: 'roboto';
     font-weight: 700;
-    margin-bottom: 5px;
+    margin: 20px 0 5px 0;
     transition: all 0.5s ease-out;
     text-shadow: 3px 3px 5px gray;
 
@@ -68,6 +68,7 @@ const StyledWrapper = styled.div`
     font-family: 'oxygen';
     letter-spacing: 2px;
     transition: all 0.5s ease-out;
+    margin-bottom: 0;
   }
 
   @keyframes animate {
@@ -96,6 +97,7 @@ const StyledWrapper = styled.div`
 
     p {
       font-size: 18px;
+      margin-bottom: 15px;
     }
   }
 

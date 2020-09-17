@@ -42,18 +42,16 @@ export default Layout;
 // Style
 
 const PageContainer = styled.div`
-  //display: flex;
-  //flex-direction: column;
-  //min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: ${theme.secondary};
 `;
 const ChildContainer = styled.main`
   position: relative;
-  //flex-grow: 1;
+  flex-grow: 1;
   background: #fff;
   width: 100%;
   padding: 0;
   margin: 3rem auto;
-
-  //clip-path: polygon(0% 40px, 40px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
 `;
