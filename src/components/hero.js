@@ -3,9 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 import HeroAnimatedText from './heroAnimatedText';
-import Button from './button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+//import Button from './button';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -20,7 +20,7 @@ const Hero = () => {
     }
   `);
   return (
-    <StyledContainer>
+    <StyledContainer className='hero-container'>
       <Img fluid={data.face.childImageSharp.fluid} alt='face' />
       <div className='text-wrapper'>
         <HeroAnimatedText />
