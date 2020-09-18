@@ -22,7 +22,7 @@ const Hero = () => {
 
   return (
     <StyledContainer>
-      <Img fluid={data.face.childImageSharp.fluid} alt='face' />
+      <Img fluid={data.face.childImageSharp.fluid} alt='Beautiful face' />
       <div className='text-wrapper'>
         <HeroAnimatedText />
         <div className='socials'>
