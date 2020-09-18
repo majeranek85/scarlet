@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakpoints } from '../utils/breakpoints';
+import { breakpoints } from '../../utils/breakpoints';
 
 const HeroAnimatedText = () => {
   return (

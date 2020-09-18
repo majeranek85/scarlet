@@ -1,8 +1,8 @@
 //import { Link } from "gatsby"
 import PropTypes from 'prop-types';
 import React from 'react';
-import DesktopNavMenu from './desktopNav';
-import MobileNavMenu from './mobileNav';
+import DesktopNavMenu from '../features/desktopNav';
+import MobileNavMenu from '../features/mobileNav';
 
 const Header = ({ siteTitle }) => {
   return (

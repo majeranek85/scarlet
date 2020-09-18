@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { breakpoints } from '../utils/breakpoints';
-import { theme } from '../utils/theme';
+import { breakpoints } from '../../utils/breakpoints';
+import { theme } from '../../utils/theme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
