@@ -2,8 +2,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import HeroAnimatedText from './heroAnimatedText';
-import Button from './button';
+import HeroAnimatedText from '../common/heroAnimatedText';
+import Button from '../common/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
@@ -12,16 +12,17 @@ const Hero = () => {
     query {
       face: file(relativePath: { eq: "scarlet-studio-face.jpg" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `);
+
   return (
-    <StyledContainer className='hero-container'>
-      <Img fluid={data.face.childImageSharp.fluid} alt='face' />
+    <StyledContainer>
+      <Img fluid={data.face.childImageSharp.fluid} alt='Beautiful face' />
       <div className='text-wrapper'>
         <HeroAnimatedText />
         <div className='socials'>
@@ -43,7 +44,7 @@ export default Hero;
 
 // style
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.section`
   position: relative;
 
   .gatsby-image-wrapper {

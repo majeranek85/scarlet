@@ -1,16 +1,17 @@
 import React from 'react';
-import Hero from '../components/hero';
+
 //import { Link } from "gatsby"
 
-import Layout from '../components/layout';
-//import Image from "../components/image"
+import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
+import Hero from '../components/sections/hero';
+import About from '../components/sections/about';
 
 const IndexPage = () => (
   <Layout className='layout-container'>
     <SEO title='Home' />
     <Hero />
-    <h1>HomePage</h1>
+    <About />
   </Layout>
 );
 
