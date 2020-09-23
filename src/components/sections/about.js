@@ -59,6 +59,11 @@ const StyledWrapper = styled.div`
 `;
 
 const SliderWrapper = styled.div`
+  .carousel-caption,
+  .carousel-indicators {
+    z-index: 5;
+  }
+
   @media ${breakpoints.xl} {
     margin: 0 auto;
     width: 70%;
