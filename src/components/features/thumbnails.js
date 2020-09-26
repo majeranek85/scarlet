@@ -37,16 +37,17 @@ export default Thumbnails;
 
 const StyledContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  padding-top: 30px;
 `;
 
 const StyledImageWrapper = styled.div`
-  width: 300px;
-  height: 300px;
-  padding: 20px;
+  height: 360px;
+  max-width: 360px;
+  padding: 10px;
 
   img {
     object-fit: cover;
