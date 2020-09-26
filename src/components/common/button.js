@@ -30,19 +30,7 @@ const StyledButton = styled.a`
   width: 45px;
   height: 45px;
   text-align: center;
-
-  --notchSize: 10px;
-
-  clip-path: polygon(
-    0% var(--notchSize),
-    var(--notchSize) 0%,
-    calc(100% - var(--notchSize)) 0%,
-    100% var(--notchSize),
-    100% calc(100% - var(--notchSize)),
-    calc(100% - var(--notchSize)) 100%,
-    var(--notchSize) 100%,
-    0% calc(100% - var(--notchSize))
-  );
+  border-radius: 20%20%;
 
   .visually-hidden {
     clip-path: inset(100%);
@@ -56,7 +44,7 @@ const StyledButton = styled.a`
 
   :hover {
     color: #fff;
-    transition: color 0.5s, background 0.5s;
+    transition: all 0.5s;
     background: ${theme.text};
   }
 `;

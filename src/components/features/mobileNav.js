@@ -98,6 +98,9 @@ const MenuIcon = styled.button`
   outline: none;
   z-index: 11;
   padding: 0;
+  :focus {
+    outline: thin dotted;
+  }
 
   div {
     width: 2rem;
@@ -147,15 +150,15 @@ const MenuLinks = styled.nav`
     width: 100%;
     position: relative;
 
-    ::after, ::before {
+    ::after,
+    ::before {
       content: '';
-      top: 0
+      top: 0;
       left: 50%;
       width: 50%;
       height: 2px;
       background: ${theme.coral};
     }
-
 
     li {
       list-style-type: none;

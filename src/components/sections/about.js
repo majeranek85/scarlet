@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { theme } from '../../utils/theme';
 import Slider from '../features/slider';
 import { breakpoints } from '../../utils/breakpoints';
+import PageTitle from '../common/pageTitle';
 
 const description = {
   sectionTitle: 'O nas',
@@ -14,7 +15,7 @@ const About = () => {
   return (
     <StyledContainer>
       <StyledWrapper>
-        <h1>{description.sectionTitle}</h1>
+        <PageTitle title={description.sectionTitle} />
         <p>{description.paragraph}</p>
         <SliderWrapper>
           <Slider />
@@ -44,12 +45,8 @@ const StyledWrapper = styled.div`
   text-align: center;
   padding: 1rem;
 
-  h1 {
-    padding-top: 1rem;
-  }
-
   p {
-    line-height: 40px;
+    padding-top: 40px;
   }
 
   @media ${breakpoints.md} {
@@ -67,6 +64,5 @@ const SliderWrapper = styled.div`
   @media ${breakpoints.xl} {
     margin: 0 auto;
     width: 70%;
-    box-shadow: 0px 0px 10px 0px #aa9c9d;
   }
 `;
