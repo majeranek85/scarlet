@@ -86,11 +86,6 @@ const StyledWrapper = styled.div`
 
   :nth-child(odd) {
     background: ${theme.secondary};
-    box-shadow: 0px 0px 10px 0px #aa9c9d;
-
-    .image-box {
-      order: 1;
-    }
   }
 
   .image-box {
@@ -101,12 +96,13 @@ const StyledWrapper = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      margin: 0;
     }
   }
 
   .description-box {
     flex: 1;
-    padding: 30px;
+    padding-top: 30px;
 
     h4 {
       color: #cd5b45;
@@ -116,5 +112,18 @@ const StyledWrapper = styled.div`
   @media ${breakpoints.lg} {
     flex-direction: row;
     padding: 40px 10%;
+
+    :nth-child(odd) {
+      background: ${theme.secondary};
+      box-shadow: 0px 0px 10px 0px #aa9c9d;
+
+      .image-box {
+        order: 1;
+      }
+    }
+
+    .description-box {
+      padding: 30px;
+    }
   }
 `;
