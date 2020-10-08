@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PageTitle from '../components/common/pageTitle';
 import Thumbnails from '../components/features/thumbnails';
-//import { Link } from "gatsby"
-
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 
@@ -18,6 +16,8 @@ const GalleryPage = () => (
 );
 
 export default GalleryPage;
+
+// Style
 
 const StyledContainer = styled.section`
   display: flex;

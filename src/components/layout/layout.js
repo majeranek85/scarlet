@@ -23,11 +23,7 @@ const Layout = ({ children }) => {
       <PageContainer className='page-container'>
         <Header siteTitle={data.site.siteMetadata.title} className='header-container' />
         <ChildContainer className='page-content-container'>{children}</ChildContainer>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
-        </footer>
+        <footer>© {new Date().getFullYear()}, Scarlet Studio Urody</footer>
       </PageContainer>
     </ThemeProvider>
   );

@@ -18,6 +18,8 @@ Button.propTypes = {
 
 export default Button;
 
+// Style
+
 const StyledButton = styled.a`
   text-transform: uppercase;
   text-decoration: none;

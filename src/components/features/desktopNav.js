@@ -48,7 +48,7 @@ const DesktopNavMenu = () => {
 
 export default DesktopNavMenu;
 
-// style
+// Style
 
 const StyledHeader = styled.header`
   display: none;

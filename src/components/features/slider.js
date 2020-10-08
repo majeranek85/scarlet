@@ -89,6 +89,8 @@ const Slider = () => {
 
 export default Slider;
 
+// Style
+
 const StyledCap = styled.div`
   background: rgba(0, 0, 0, 0.2);
 `;

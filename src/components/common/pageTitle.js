@@ -13,6 +13,8 @@ const PageTitle = props => {
 
 export default PageTitle;
 
+// Style
+
 const StyledTitle = styled.header`
   padding-top: 20px;
   position: relative;

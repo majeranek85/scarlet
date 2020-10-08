@@ -65,6 +65,8 @@ const Treatments = () => {
 
 export default Treatments;
 
+// Style
+
 const StyledContainer = styled.section`
   display: flex;
   justify-content: center;
