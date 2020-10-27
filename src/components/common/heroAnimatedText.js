@@ -14,7 +14,7 @@ const HeroAnimatedText = () => {
         <span>e</span>
         <span>t</span>
       </div>
-      <p>Odkryjemy Twoje piękno</p>
+      <p>Mobilny gabinet kosmetyczny</p>
     </StyledWrapper>
   );
 };
@@ -25,12 +25,12 @@ export default HeroAnimatedText;
 
 const StyledWrapper = styled.div`
   text-transform: uppercase;
+  text-align: center;
 
   .text-area {
     font-size: 30px;
     font-family: 'roboto';
     font-weight: 700;
-    margin: 20px 0 5px 0;
     transition: all 0.5s ease-out;
     text-shadow: 3px 3px 5px gray;
 
@@ -92,19 +92,16 @@ const StyledWrapper = styled.div`
   @media ${breakpoints.sm} {
     .text-area {
       font-size: 50px;
-      margin-bottom: 15px;
     }
 
     p {
       font-size: 18px;
-      margin-bottom: 15px;
     }
   }
 
   @media ${breakpoints.md} {
     .text-area {
       font-size: 70px;
-      margin-bottom: 25px;
     }
 
     p {
@@ -115,7 +112,6 @@ const StyledWrapper = styled.div`
   @media ${breakpoints.lg} {
     .text-area {
       font-size: 110px;
-      margin-bottom: 50px;
     }
 
     p {

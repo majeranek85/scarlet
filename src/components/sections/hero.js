@@ -58,6 +58,7 @@ const StyledContainer = styled.section`
     transform: translateY(-50%);
 
     .socials {
+      margin-top: 15px;
       display: flex;
       justify-content: center;
     }
