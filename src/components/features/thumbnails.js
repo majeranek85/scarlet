@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import {theme} from '../../utils/theme'
 import { breakpoints } from '../../utils/breakpoints';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 const Thumbnails = () => {
@@ -27,6 +29,7 @@ const Thumbnails = () => {
 
   const [imageToShow, setImageToShow] = useState("");
   const [lightboxDisplay, setLightBoxDisplay] = useState(false);
+
 
   //function to show a specific image in the lightbox, amd make lightbox visible
   const showImage = (image) => {
@@ -55,6 +58,7 @@ const Thumbnails = () => {
   const showPrev = (e) => {
     e.stopPropagation();
     let currentIndex = photos.indexOf(imageToShow);
+    console.log(currentIndex);
     if (currentIndex <= 0) {
       setLightBoxDisplay(false);
     } else {
@@ -63,20 +67,68 @@ const Thumbnails = () => {
     }
   };
 
-  console.log(imageToShow);
+  /*const handleKey = (e) => {
+    const key = e.key;
+    switch (key) {
+      case 'ArrowLeft':
+        showPrev(e);
+        console.log('left');
+        break;
+      case 'ArrowRight':
+        showNext(e);
+        console.log('right');
+        break;
+      case 'Escape':
+        hideLightBox();
+        console.log('esc');
+        break;
+      default:
+        console.log('default');
+    }
+  }*/
+
+ /* useEffect(() => {
+    window.addEventListener('keydown', (e) => {
+      if(e.key === 'Escape') {
+        hideLightBox();
+      /*} else if (e.key === 'ArrowLeft'){
+        showPrev(e);
+      } else if(e.key === 'ArrowRight'){
+        showNext(e);
+      }
+    })*/
+    /*window.addEventListener('keydown', (e) => {handleKey(e)});
+    return () => {
+      window.removeEventListener('keydown', (e) => {
+        if(e.key === 'Escape') {
+          hideLightBox();
+        /*} else if (e.key === 'ArrowLeft'){
+          showPrev(e);
+        } else if(e.key === 'ArrowRight'){
+          showNext(e);
+        }
+      })*/
+      /*window.removeEventListener('keydown', (e) => {handleKey(e)});
+    }
+  })*/
+
   return (
     <StyledContainer>
       {photos.map((photo, id) => (
-        <StyledImageWrapper key={id} onClick={() => showImage(photo)}>
-          <img src={photo.fluid.srcSet} alt={photo.alt} tabIndex={id}/>
+        <StyledImageWrapper key={id} tabIndex={0} onClick={() => showImage(photo)} onKeyDown={() => showImage(photo)}>
+          <img src={photo.fluid.srcSet} alt={photo.alt} />
         </StyledImageWrapper>
       ))}
       {
         lightboxDisplay ?
-          <div id="lightbox" onClick={hideLightBox}>
-            <button onClick={showPrev}>⭠</button>
-            <img id="lightbox-img" src={imageToShow.fluid.srcSet}></img>
-            <button onClick={showNext}>⭢</button>
+          <div id="lightbox" role='link' tabIndex={-1} onClick={hideLightBox} onKeyDown={hideLightBox}>
+            <button onClick={showPrev} onKeyDown={(e)=> e.key === 'ArrowLeft' && showPrev}>
+              <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
+            </button>
+            <img id="lightbox-img" src={imageToShow.fluid.srcSet} alt={imageToShow.alt}></img>
+            <button onClick={showNext} onKeyDown={(e)=> e.key === 'ArrowRight' && showNext}>
+            <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>
+            </button>
           </div>
         : ''
       }
@@ -97,39 +149,42 @@ const StyledContainer = styled.div`
   padding-top: 30px;
 
   #lightbox-img {
-  height: 80vh;
-  max-width: 80vw;
-  object-fit: cover;
-  z-index: 999;
-}
+    height: 80vh;
+    max-width: 80vw;
+    object-fit: cover;
+    z-index: 999;
+    border: 1px solid white;
+  }
 
-#lightbox {
-  z-index: 11;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+  #lightbox {
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-button {
-  color: ${theme.text};
-  border: 2px solid ${theme.coral};
-  border-radius: 5px;
-  background-color: ${theme.coral};
-  font-size: 36px;
-  outline: thin dotted;
-  margin: 10px;
+  button {
+    color: ${theme.text};
+    border: 2px solid ${theme.coral};
+    border-radius: 5px;
+    background-color: ${theme.coral};
+    font-size: 32px;
+    outline: thin dotted;
+    margin: 10px;
+  }
 
-}
-
-button:hover {
-  cursor: pointer;
-}
+  button:hover,
+  button::focus {
+    cursor: pointer;
+    background-color: ${theme.primary};
+    border-color: ${theme.primary};
+  }
 
 `;
 
