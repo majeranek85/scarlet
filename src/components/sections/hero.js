@@ -30,7 +30,7 @@ const Hero = () => {
             <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             <span className='visually-hidden'>Instagram</span>
           </Button>
-          <Button href='https://facebook.com' target='_blank'>
+          <Button href='https://www.facebook.com/rzesy.elk.9' target='_blank'>
             <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
             <span className='visually-hidden'>Facebook</span>
           </Button>
