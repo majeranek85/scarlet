@@ -57,7 +57,7 @@ const Treatments = () => {
                 </ul>
               </div>
               <Accordion
-                title='czytaj więcej...'
+                title='czytaj więcej'
                 content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ullamcorper consectetur mi a euismod. Fusce faucibus nibh eget luctus lobortis. Morbi consequat turpis vitae magna hendrerit facilisis. Morbi iaculis faucibus magna, sit amet sodales ipsum lacinia nec. Maecenas ac metus nibh. Quisque non tortor rutrum, ultrices lorem nec, sodales ligula. Sed fermentum libero in mi luctus accumsan. Nulla dictum, lacus eu accumsan malesuada, arcu nisl finibus ante, non scelerisque nisl nibh eu dolor. Sed a tortor ut nunc pretium vehicula id id sem. Nam nulla arcu, scelerisque vitae ornare sit amet, facilisis sit amet elit. Phasellus vel purus eu nisi bibendum posuere id eu nisi. Nulla facilisi. Morbi tincidunt lacinia arcu. Nam eleifend risus quis justo congue, sed feugiat diam lacinia. Etiam bibendum, mauris non feugiat finibus, lectus purus efficitur tellus, a interdum ex dolor ut neque.'
               />
             </StyledWrapper>
@@ -115,20 +115,18 @@ const StyledWrapper = styled.div`
 
 
     h4 {
-      color: #cd5b45;
+      color: ${theme.header};
     }
-  }
-
-  .accordion-section{
-    flex: 0 0 100%;
-
-    width: 100%;
   }
 
   @media ${breakpoints.lg} {
     flex-direction: row;
     flex-wrap: wrap;
     padding: 40px 10%;
+
+    .accordion-section {
+      order: 3;
+    }
 
     :nth-child(odd) {
       background: ${theme.secondary};
@@ -137,15 +135,14 @@ const StyledWrapper = styled.div`
       .image-box {
         order: 1;
       }
+
+      .accordion {
+        margin: 0 auto 18px 15%;
+      }
     }
 
     .description-box {
       padding: 30px;
     }
-
-  }
-
-  .accordion-section{
-    order: 3;
   }
 `;
