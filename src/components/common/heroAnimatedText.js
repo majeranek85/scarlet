@@ -64,9 +64,9 @@ const StyledWrapper = styled.div`
   }
 
   p {
-    font-size: 12px;
+    font-size: 10px;
     font-family: 'oxygen';
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     transition: all 0.5s ease-out;
     margin-bottom: 0;
   }
