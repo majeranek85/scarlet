@@ -103,46 +103,52 @@ const StyledContainer = styled.div`
   margin: 0 auto;
   padding-top: 30px;
 
-  #lightbox-img {
-    height: 80vh;
-    max-width: 80vw;
-    object-fit: cover;
-    z-index: 999;
-    box-shadow: 0px 0px 10px 0px #000;
-  }
-
   #lightbox {
-    z-index: 11;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(0,0,0,0.7);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: none;
   }
 
-  button {
-    color: ${theme.textLight};
-    border: none;
-    background-color: transparent;
-    font-size: 46px;
-    padding: 0 10px;
-    margin: 10px;
-    opacity: 0.7;
-  }
+  @media ${breakpoints.sm} {
+    #lightbox-img {
+      height: 80vh;
+      max-width: 80vw;
+      object-fit: cover;
+      z-index: 999;
+      box-shadow: 0px 0px 10px 0px #000;
+    }
 
-  button:focus {
-    outline: thin dotted;
-  }
+    #lightbox {
+      z-index: 11;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  button:hover,
-  button::focus {
-    cursor: pointer;
-    background-color: ${theme.primary};
-    border-color: ${theme.primary};
+    button {
+      color: ${theme.textLight};
+      border: none;
+      background-color: transparent;
+      font-size: 46px;
+      padding: 0 10px;
+      margin: 10px;
+      opacity: 0.7;
+    }
+
+    button:focus {
+      outline: thin dotted;
+    }
+
+    button:hover,
+    button::focus {
+      cursor: pointer;
+      background-color: ${theme.primary};
+      border-color: ${theme.primary};
+    }
   }
 
 `;

@@ -36,13 +36,13 @@ const StyledWrapper = styled.div`
 
     span {
       color: #262626;
-      opacity: 0;
-      transform: rotate(-180deg);
-      animation: animate 3s forwards;
+      opacity: 1;
+      //transform: rotate(-180deg);
+      //animation: animate 3s forwards;
       display: inline-block;
       padding-right: 10px;
 
-      :nth-of-type(2) {
+      /*:nth-of-type(2) {
         animation-delay: 0.1s;
       }
       :nth-of-type(3) {
@@ -59,7 +59,7 @@ const StyledWrapper = styled.div`
       }
       :nth-of-type(7) {
         animation-delay: 0.6s;
-      }
+      }*/
     }
   }
 
@@ -71,7 +71,7 @@ const StyledWrapper = styled.div`
     margin-bottom: 0;
   }
 
-  @keyframes animate {
+  /*@keyframes animate {
     30% {
       transform: translate(0, -50px) rotate(180deg) scale(1);
     }
@@ -87,7 +87,7 @@ const StyledWrapper = styled.div`
       transform: translate(0) rotate(0) scale(1);
       opacity: 1;
     }
-  }
+  }*/
 
   @media ${breakpoints.sm} {
     .text-area {

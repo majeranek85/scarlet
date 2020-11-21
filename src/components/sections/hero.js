@@ -6,11 +6,12 @@ import HeroAnimatedText from '../common/heroAnimatedText';
 import Button from '../common/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { breakpoints } from '../../utils/breakpoints';
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      face: file(relativePath: { eq: "scarlet-studio-face.jpg" }) {
+      face: file(relativePath: { eq: "tło.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
@@ -46,9 +47,14 @@ export default Hero;
 
 const StyledContainer = styled.section`
   position: relative;
+  display: flex;
+  justify-content: end;
+  background: #fff;
 
   .gatsby-image-wrapper {
     max-height: 100vh;
+    width: 100vw;
+    margin-left: auto;
   }
 
   .text-wrapper {
@@ -61,6 +67,13 @@ const StyledContainer = styled.section`
       margin-top: 15px;
       display: flex;
       justify-content: center;
+    }
+  }
+
+  @media ${breakpoints.md}{
+    .gatsby-image-wrapper {
+      width: 50vw;
+      max-height: 100vh;
     }
   }
 `;
