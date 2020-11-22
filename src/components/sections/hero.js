@@ -11,7 +11,7 @@ import { breakpoints } from '../../utils/breakpoints';
 const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
-      face: file(relativePath: { eq: "tło.jpg" }) {
+      face: file(relativePath: { eq: "scarlet-home-optim.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1200) {
             ...GatsbyImageSharpFluid
@@ -74,6 +74,10 @@ const StyledContainer = styled.section`
     .gatsby-image-wrapper {
       width: 50vw;
       max-height: 100vh;
+    }
+
+    .text-wrapper {
+      left: 15%;
     }
   }
 `;
