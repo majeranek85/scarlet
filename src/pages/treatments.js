@@ -139,7 +139,7 @@ const StyledWrapper = styled.div`
     padding: 50px 10%;
 
     .accordion-section {
-      margin-top: 50px;
+      margin-top: 30px;
       order: 3;
     }
 

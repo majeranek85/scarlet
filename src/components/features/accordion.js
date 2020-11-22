@@ -121,15 +121,12 @@ const StyledAccordion = styled.div`
   .accordion-content {
     overflow: hidden;
     transition: max-height 0.6s ease;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    //width: 100%;
 
     .accordion-text {
-      //padding: 30px;
-      padding: 30px 0 0 0;
-      //flex: 1;
+      padding: 30px;
       flex: 0 0 100%;
     }
   }
@@ -138,7 +135,6 @@ const StyledAccordion = styled.div`
 
     .accordion-content {
       .accordion-text {
-        //padding: 30px;
         flex: 1;
       }
     }
