@@ -13,11 +13,18 @@ const Treatments = () => {
     query {
       allDatoCmsTreatment {
         nodes {
+          treatment
+          key
           description
           title
-          options {
+          effects {
             name
-            description
+          }
+          contraindications {
+            name
+          }
+          recommendations {
+            name
           }
           image {
             fluid {
@@ -37,28 +44,24 @@ const Treatments = () => {
     <Layout>
       <SEO title='Zabiegi' />
       <StyledContainer>
-        <PageTitle title='Zabiegi' />
+        <PageTitle title='Oferta zabiegów' />
         <StyledItems>
-          {treatments.map((item, id) => (
-            <StyledWrapper key={id}>
+          {treatments.map((item) => (
+            <StyledWrapper key={item.key}>
               <div className='image-box'>
                 <img src={item.image.fluid.srcSet} alt={item.image.alt} />
               </div>
               <div className='description-box'>
-                <h4>{item.title}</h4>
+                <h3>{item.title}</h3>
                 <p>{item.description}</p>
-                <ul>
-                  {item.options.map((opt, id) => (
-                    <li key={id}>
-                      <h5>{opt.name}</h5>
-                      <p>{opt.description}</p>
-                    </li>
-                  ))}
-                </ul>
+                <span>Kategoria: </span>
+                <p className='kategorie'>{item.treatment}</p>
               </div>
               <Accordion
                 title='czytaj więcej'
-                content='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ullamcorper consectetur mi a euismod. Fusce faucibus nibh eget luctus lobortis. Morbi consequat turpis vitae magna hendrerit facilisis. Morbi iaculis faucibus magna, sit amet sodales ipsum lacinia nec. Maecenas ac metus nibh. Quisque non tortor rutrum, ultrices lorem nec, sodales ligula. Sed fermentum libero in mi luctus accumsan. Nulla dictum, lacus eu accumsan malesuada, arcu nisl finibus ante, non scelerisque nisl nibh eu dolor. Sed a tortor ut nunc pretium vehicula id id sem. Nam nulla arcu, scelerisque vitae ornare sit amet, facilisis sit amet elit. Phasellus vel purus eu nisi bibendum posuere id eu nisi. Nulla facilisi. Morbi tincidunt lacinia arcu. Nam eleifend risus quis justo congue, sed feugiat diam lacinia. Etiam bibendum, mauris non feugiat finibus, lectus purus efficitur tellus, a interdum ex dolor ut neque.'
+                effects={item.effects}
+                contraindications={item.contraindications}
+                recommendations={item.recommendations}
               />
             </StyledWrapper>
           ))}
@@ -98,8 +101,7 @@ const StyledWrapper = styled.div`
   .image-box {
     flex: 0 0 50%;
     background: gray;
-    height: 400px;
-
+    height: 300px;
 
     img {
       width: 100%;
@@ -112,20 +114,40 @@ const StyledWrapper = styled.div`
   .description-box {
     flex: 0 0 50%;
     padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
 
+    span {
+      margin-top: auto;
+    }
 
-    h4 {
+    .kategorie {
+      color: ${theme.coral};
+    }
+
+    h3 {
       color: ${theme.header};
+      text-align: center;
+      font-weight: 100;
     }
   }
 
   @media ${breakpoints.lg} {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 40px 10%;
+    padding: 50px 10%;
 
     .accordion-section {
+      margin-top: 50px;
       order: 3;
+    }
+
+    :nth-child(even) {
+      .description-box{
+        padding-left: 30px;
+      }
+
     }
 
     :nth-child(odd) {
@@ -136,13 +158,9 @@ const StyledWrapper = styled.div`
         order: 1;
       }
 
-      .accordion {
-        margin: 0 auto 18px 15%;
+      .description-box {
+        padding-right: 30px;
       }
-    }
-
-    .description-box {
-      padding: 30px;
     }
   }
 `;

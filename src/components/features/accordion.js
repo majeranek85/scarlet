@@ -26,10 +26,47 @@ const Accordion = (props) => {
         <FontAwesomeIcon className={`${setRotate}`} icon={faChevronRight}/>
       </button>
       <div ref={content} style={{maxHeight: `${setHeight}`}} className='accordion-content'>
-        <div
-          className='accordion-text'
-          dangerouslySetInnerHTML={{ __html: props.content}}
-        />
+
+        {props.effects.length === 0 ? null :
+          <div className='accordion-text'>
+            <h5>Efekty</h5>
+            <ul>
+              {props.effects.map((opt, id) => (
+                <li key={id}>
+                  <p>{opt.name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        }
+
+        {props.recommendations.length === 0 ? null :
+          <div className='accordion-text'>
+            <h5>Wskazania</h5>
+            <ul>
+              {props.recommendations.map((opt, id) => (
+                <li key={id}>
+                  <p>{opt.name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        }
+
+        {props.contraindications.length === 0 ? null :
+          <div className='accordion-text'>
+            <h5>Przeciwwskazania</h5>
+            <ul>
+              {props.contraindications.map((opt, id) => (
+                <li key={id}>
+                  <p>{opt.name}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        }
+
+
       </div>
     </StyledAccordion>
   )
@@ -50,10 +87,11 @@ const StyledAccordion = styled.div`
     background: transparent;
     color: ${theme.header};
     text-transform: uppercase;
-    margin: 0 auto 18px auto;
+    flex: 0 0 100%;
 
     .accordion-title {
       margin-bottom: 0;
+      text-align: center;
     }
 
     .accordion-icon {
@@ -83,11 +121,34 @@ const StyledAccordion = styled.div`
   .accordion-content {
     overflow: hidden;
     transition: max-height 0.6s ease;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    //width: 100%;
+
+    .accordion-text {
+      //padding: 30px;
+      padding: 30px 0 0 0;
+      //flex: 1;
+      flex: 0 0 100%;
+    }
+  }
+
+  @media ${breakpoints.md} {
+
+    .accordion-content {
+      .accordion-text {
+        //padding: 30px;
+        flex: 1;
+      }
+    }
   }
 
   @media ${breakpoints.lg} {
-    .accordion {
-      margin: 0 15% 18px auto;
+    .accordion-content {
+      .accordion-text {
+        padding: 30px;
+      }
     }
   }
 `;
