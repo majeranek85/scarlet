@@ -143,7 +143,7 @@ const StyledAccordion = styled.div`
   @media ${breakpoints.lg} {
     .accordion-content {
       .accordion-text {
-        padding: 30px;
+        padding: 20px;
       }
     }
   }

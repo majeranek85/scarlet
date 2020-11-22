@@ -136,10 +136,10 @@ const StyledWrapper = styled.div`
   @media ${breakpoints.lg} {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px 10%;
+    padding: 50px 10% 0 10%;
 
     .accordion-section {
-      margin-top: 30px;
+      margin: 30px 0;
       order: 3;
     }
 
