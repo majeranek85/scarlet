@@ -30,8 +30,8 @@ const StyledWrapper = styled.div`
   .text-area {
     font-size: 30px;
     font-family: 'roboto';
-    font-weight: 700;
-    transition: all 0.5s ease-out;
+    //font-weight: 100;
+    //transition: all 0.5s ease-out;
     text-shadow: 3px 3px 5px gray;
 
     span {

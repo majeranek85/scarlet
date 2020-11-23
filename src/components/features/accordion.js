@@ -132,19 +132,14 @@ const StyledAccordion = styled.div`
   }
 
   @media ${breakpoints.md} {
-
-    .accordion-content {
-      .accordion-text {
-        flex: 1;
-      }
+    .accordion-content .accordion-text {
+      flex: 1;
     }
   }
 
   @media ${breakpoints.lg} {
-    .accordion-content {
-      .accordion-text {
-        padding: 20px;
-      }
+    .accordion-content .accordion-text {
+      padding: 20px;
     }
   }
 `;

@@ -147,7 +147,6 @@ const StyledWrapper = styled.div`
       .description-box{
         padding-left: 30px;
       }
-
     }
 
     :nth-child(odd) {
