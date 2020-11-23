@@ -4,16 +4,17 @@ import PageTitle from '../components/common/pageTitle';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import { graphql, useStaticQuery } from 'gatsby';
-import { breakpoints } from '../utils/breakpoints';
-import { theme } from '../utils/theme';
-import Accordion from '../components/features/accordion';
+import DesktopCategories from '../components/features/desktopCategories';
+//import { breakpoints } from '../utils/breakpoints';
+//import { theme } from '../utils/theme';
+//import Accordion from '../components/features/accordion';
 
 const Treatments = () => {
   const data = useStaticQuery(graphql`
     query {
       allDatoCmsTreatment {
         nodes {
-          treatment
+          category
           key
           description
           title
@@ -38,15 +39,20 @@ const Treatments = () => {
   `);
 
   const treatments = data.allDatoCmsTreatment.nodes;
-  console.log(treatments);
+  //console.log(treatments);
+  const arr = [];
+  treatments.map(item => arr.includes(item.category) ? null : arr.push(item.category) )
+  //console.log(arr);
 
   return (
     <Layout>
       <SEO title='Zabiegi' />
       <StyledContainer>
         <PageTitle title='Oferta zabiegów' />
+        <DesktopCategories categories={arr} />
         <StyledItems>
-          {treatments.map((item) => (
+
+          {/*treatments.map((item) => (
             <StyledWrapper key={item.key}>
               <div className='image-box'>
                 <img src={item.image.fluid.srcSet} alt={item.image.alt} />
@@ -64,7 +70,7 @@ const Treatments = () => {
                 recommendations={item.recommendations}
               />
             </StyledWrapper>
-          ))}
+          ))*/}
         </StyledItems>
       </StyledContainer>
     </Layout>
@@ -88,7 +94,7 @@ const StyledItems = styled.div`
   flex-direction: column;
 `;
 
-const StyledWrapper = styled.div`
+/*const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -162,4 +168,4 @@ const StyledWrapper = styled.div`
       }
     }
   }
-`;
+`;*/
