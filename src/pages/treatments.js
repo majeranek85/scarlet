@@ -40,8 +40,7 @@ const Treatments = () => {
 
   const treatments = data.allDatoCmsTreatment.nodes;
   //console.log(treatments);
-  const arr = [];
-  treatments.map(item => arr.includes(item.category) ? null : arr.push(item.category) )
+
   //console.log(arr);
 
   return (
@@ -49,7 +48,7 @@ const Treatments = () => {
       <SEO title='Zabiegi' />
       <StyledContainer>
         <PageTitle title='Oferta zabiegów' />
-        <DesktopCategories categories={arr} />
+        <DesktopCategories treatments={treatments} />
         <StyledItems>
 
           {/*treatments.map((item) => (
