@@ -16,3 +16,33 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   }
 }
+
+exports.createPages = async({graphql, actions}) => {
+
+  const { createPage } = actions;
+
+  const result = await graphql(`
+  {
+    allDatoCmsCategory {
+      edges {
+        node {
+          slug
+        }
+      }
+    }
+  }`)
+
+  const categories = result.data.allDatoCmsCategory.edges;
+
+  categories.forEach(({node}) => {
+    const { slug } = node;
+
+    createPage({
+      path: `/treatments/${slug}`,
+      component: require.resolve(`./src/templates/category.js`),
+      context: {
+        slug
+      }
+    })
+  })
+}

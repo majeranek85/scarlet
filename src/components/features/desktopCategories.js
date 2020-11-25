@@ -1,42 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 
 const DesktopCategories = (props) => {
+  const categories =  props.categories;
+  console.log(categories);
 
-  const data = useStaticQuery(graphql`
-    query {
-      allDatoCmsCategory {
-        nodes {
-          title
-          slug
-          image {
-            fluid {
-              srcSet
-            }
-            alt
-          }
-        }
-      }
-    }
-  `);
-  console.log(props);
-
-  const categories = data.allDatoCmsCategory.nodes
-  //const categories = [];
-  //props.treatments.map(item => categories.includes(item.category) ? null : categories.push(item.category) )
-  
   return (
     <nav>
       <StyledList>
-        {categories.map( (item, id) => (
-          <li key={id}>
-            <a href='#test'>
+        {categories.map( ({node}) => (
+          <li key={node.slug}>
+            <Link to={`/treatments/${node.slug}`}>
               <div className='image-box'>
-                <img src={item.image.fluid.srcSet} alt={item.image.alt}/>
+                <img src={node.image.fluid.srcSet} alt={node.image.alt}/>
               </div>
-              <p>{item.title}</p>
-            </a>
+              <p>{node.title}</p>
+            </Link>
           </li>
         ))}
       </StyledList>

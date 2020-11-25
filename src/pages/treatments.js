@@ -11,35 +11,30 @@ import DesktopCategories from '../components/features/desktopCategories';
 
 const Treatments = () => {
   const data = useStaticQuery(graphql`
-    query {
-      allDatoCmsTreatment {
-        nodes {
-          category
-          key
-          description
-          title
-          effects {
-            name
-          }
-          contraindications {
-            name
-          }
-          recommendations {
-            name
-          }
+  {
+    allDatoCmsCategory {
+      edges {
+        node {
           image {
+            alt
             fluid {
               srcSet
             }
-            alt
+          }
+          slug
+          title
+          treatments {
+            description
+            effects
           }
         }
       }
     }
+  }
   `);
 
-  const treatments = data.allDatoCmsTreatment.nodes;
-  //console.log(treatments);
+  const categories = data.allDatoCmsCategory.edges;
+  console.log(categories);
 
   //console.log(arr);
 
@@ -48,7 +43,7 @@ const Treatments = () => {
       <SEO title='Zabiegi' />
       <StyledContainer>
         <PageTitle title='Oferta zabiegów' />
-        <DesktopCategories treatments={treatments} />
+        <DesktopCategories categories={categories} />
         <StyledItems>
 
           {/*treatments.map((item) => (
