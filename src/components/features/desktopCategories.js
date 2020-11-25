@@ -1,10 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 
-const DesktopCategories = (props) => {
-  const categories =  props.categories;
-  console.log(categories);
+const DesktopCategories = () => {
+
+  const data = useStaticQuery(graphql`
+  {
+    allDatoCmsCategory {
+      edges {
+        node {
+          image {
+            alt
+            fluid {
+              srcSet
+            }
+          }
+          slug
+          title
+          treatments {
+            description
+            effects
+          }
+        }
+      }
+    }
+  }
+  `);
+
+  const categories = data.allDatoCmsCategory.edges;
 
   return (
     <nav>

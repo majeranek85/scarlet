@@ -5,12 +5,14 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 //import DesktopCategories from '../components/features/desktopCategories';
 import styled from 'styled-components';
+import DesktopCategories from '../components/features/desktopCategories';
 
 const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
   return (
     <Layout key={slug}>
       <SEO title={category.title} />
       <StyledContainer>
+        <DesktopCategories/>
         <PageTitle title={category.title} />
         <StyledItems>
 
