@@ -69,7 +69,7 @@ const StyledList = styled.ul`
     .image-box {
       max-width: 200px;
       height: 200px;
-      border-radius: 50%;
+      border-radius: 5px;
       overflow: hidden;
       margin: 0 auto;
 
