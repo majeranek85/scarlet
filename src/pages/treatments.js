@@ -27,6 +27,19 @@ const StyledContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
+
+  ul {
+    flex-direction: row;
+    margin: 50px auto 0 auto;
+    flex-wrap: wrap;
+
+    li {
+      .image-box {
+        width: 250px;
+        height: 250px
+      }
+    }
+  }
 `;
 
 

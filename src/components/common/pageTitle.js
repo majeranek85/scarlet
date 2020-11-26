@@ -18,10 +18,12 @@ export default PageTitle;
 const StyledTitle = styled.header`
   padding-top: 20px;
   position: relative;
+  ;
 
   h1 {
     padding-top: 1rem;
     text-align: center;
+    font-weight: 300;
   }
 
   :after {

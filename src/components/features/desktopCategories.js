@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby';
+import { breakpoints } from '../../utils/breakpoints';
 
 const DesktopCategories = () => {
 
@@ -50,44 +51,55 @@ const DesktopCategories = () => {
 export default DesktopCategories;
 
 const StyledList = styled.ul`
-  width: 70%;
-  margin:  50px auto;
-  display: flex;
-  list-style: none;
-  text-align: center;
-  justify-content: space-evenly;
+  display: none;
 
-  a {
-    text-decoration: none;
-    color: inherit;
-    text-transform: uppercase;
-  }
+  @media ${breakpoints.md} {
+    display: block;
+    width: 100%;
+    margin:  50px auto 0 auto;
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content: space-evenly;
 
-  li {
-    flex: 0 0 25%;
+    a {
+      text-decoration: none;
+      color: inherit;
+      text-transform: uppercase;
+    }
 
-    .image-box {
-      max-width: 200px;
-      height: 200px;
-      border-radius: 5px;
-      overflow: hidden;
-      margin: 0 auto;
+    li {
+      flex: 1;
+      margin: 5px;
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .image-box {
+        width: 180px;
+        height: 80px;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      p {
+        margin-top: 20px;
+      }
+
+      :hover {
+        transform: scale(1.1);
+        transition: all 0.3s;
       }
     }
-
-    p{
-      margin-top: 20px;
-    }
-
-    :hover {
-      transform: scale(1.1);
-      transition: all 0.3s;
-    }
   }
 
+  @media ${breakpoints.lg} {
+    width: 80%;
+    flex-direction: column;
+    margin: 50px 0 0 0;
+  }
 `;

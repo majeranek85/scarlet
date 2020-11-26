@@ -3,34 +3,38 @@ import { graphql } from 'gatsby';
 import PageTitle from '../components/common/pageTitle';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-//import DesktopCategories from '../components/features/desktopCategories';
 import styled from 'styled-components';
 import DesktopCategories from '../components/features/desktopCategories';
+import Accordion from '../components/features/accordion';
+import { breakpoints } from '../utils/breakpoints';
 
 const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
   return (
     <Layout key={slug}>
       <SEO title={category.title} />
       <StyledContainer>
-      <PageTitle title={category.title} />
         <aside>
           <DesktopCategories/>
         </aside>
-        <StyledItems>
+        <div className='subpage-wrapper'>
+          <PageTitle title={category.title} />
+          <StyledItems>
 
-          <React.Fragment>
-            {
-              category.treatments.map( item => (
-                <div key={item.slug}>
-                  <h3>{item.name}</h3>
-                  <div dangerouslySetInnerHTML={{__html: item.descriptionNode.childMarkdownRemark.html}}/>
-                  <div dangerouslySetInnerHTML={{__html: item.effectsNode.childMarkdownRemark.html}}/>
-                </div>
-              ))
-            }
-          </React.Fragment>
+              {
+                category.treatments.map( item => (
+                  <div key={item.slug}>
+                    <h4>{item.name}</h4>
+                    <div dangerouslySetInnerHTML={{__html: item.descriptionNode.childMarkdownRemark.html}}/>
+                    <Accordion
+                      title='czytaj więcej'
+                      content={item.effectsNode.childMarkdownRemark.html}
+                    />
+                  </div>
+                ))
+              }
 
-        </StyledItems>
+          </StyledItems>
+        </div>
       </StyledContainer>
     </Layout>
 
@@ -39,41 +43,53 @@ const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
 
 const StyledContainer = styled.section`
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  margin: 0 auto;
-  width: 80%;
+  margin:  auto;
+  width: 100%;
+  padding: 0 10px;
 
-  header  {
-    flex: 0 0 100%;
+
+  @media ${breakpoints.md} {
+
+
+    aside {
+      flex: 0 0 100%;
+    }
+
+    .subpage-wrapper {
+      padding: 0 20px;
+    }
+
   }
 
-  aside nav ul {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left: 0;
-    
-    li  {
-      margin-bottom: 50px;
+  @media ${breakpoints.lg} {
+    background: transparent;
+    width: 80%;
+    flex-direction: row;
+    margin: 50px auto  50px auto;
 
-      .image-box {
-        height: 100px;
-        border-radius: 5px;
-      }
+    aside {
+      flex: 1;
+    }
+
+    .subpage-wrapper {
+      flex: 3;
     }
   }
-
 `;
 
 const StyledItems = styled.div`
   padding-top: 60px;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   flex: 1;
+
+  div {
+    margin-bottom: 10px;
+  }
 `;
 
 export const query = graphql`
