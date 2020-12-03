@@ -32,9 +32,11 @@ export default About;
 const StyledContainer = styled.section`
   background: ${theme.secondary};
   padding-top: 0;
+  font-size: 0.9rem;
 
   @media ${breakpoints.md} {
     padding-top: 5rem;
+    font-size: 1rem;
   }
 `;
 

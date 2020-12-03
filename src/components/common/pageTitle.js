@@ -17,7 +17,7 @@ export default PageTitle;
 // Style
 
 const StyledTitle = styled.div`
-  padding-top: 1rem;
+  padding-top: 0.2rem;
   position: relative;
   z-index: 0;
   ;

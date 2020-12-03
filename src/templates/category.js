@@ -52,9 +52,14 @@ const StyledContainer = styled.section`
 
   .subpage-wrapper {
     margin-left: 50px;
+    padding-right: 10px;
 
     h4 {
-      font-size: 1.2rem;
+      font-size: 1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
     }
   }
 
@@ -66,6 +71,14 @@ const StyledContainer = styled.section`
 
     .subpage-wrapper {
       padding: 0 20px;
+
+      h4 {
+        font-size: 1.2rem;
+      }
+
+      p {
+      font-size: 1rem;
+      }
     }
   }
 
@@ -73,7 +86,8 @@ const StyledContainer = styled.section`
     background: transparent;
     width: 80%;
     flex-direction: row;
-    margin: 50px auto  50px auto;
+    justify-content: start;
+    margin: 50px auto;
 
     aside {
       flex: 1;
@@ -81,6 +95,7 @@ const StyledContainer = styled.section`
 
     .subpage-wrapper {
       flex: 3;
+      margin-left: 0;
     }
   }
 `;
