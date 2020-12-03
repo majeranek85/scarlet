@@ -26,6 +26,8 @@ const StyledWrapper = styled.div`
     font-family: 'roboto';
     text-shadow: 0.3rem 0.3rem 0.5rem gray;
     text-transform: uppercase;
+    font-weight:100;
+    //font-style: italic;
   }
 
   p {
@@ -34,7 +36,7 @@ const StyledWrapper = styled.div`
     letter-spacing: 1px;
     transition: all 0.5s ease-out;
     margin-bottom: 0;
-    font-weight: 100;
+    font-weight: 400;
 
     span {
       color: ${theme.coral};
