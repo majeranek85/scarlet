@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 import { breakpoints } from '../../utils/breakpoints';
+import { theme } from '../../utils/theme';
 
 const DesktopCategories = () => {
 
@@ -35,7 +36,7 @@ const DesktopCategories = () => {
       <StyledList>
         {categories.map( ({node}) => (
           <li key={node.slug}>
-            <Link to={`/treatments/${node.slug}`}>
+            <Link to={`/treatments/${node.slug}`} activeClassName='active'>
               <div className='image-box'>
                 <img src={node.image.fluid.srcSet} alt={node.image.alt}/>
               </div>
@@ -64,8 +65,7 @@ const StyledList = styled.ul`
 
     a {
       text-decoration: none;
-      color: inherit;
-      text-transform: uppercase;
+      color: ${theme.text};
     }
 
     li {
@@ -87,12 +87,21 @@ const StyledList = styled.ul`
       }
 
       p {
-        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-top: 10px;
       }
 
       :hover {
         transform: scale(1.1);
         transition: all 0.3s;
+
+        a {
+          color: ${theme.coral};
+        }
+      }
+
+      .active {
+        color: ${theme.coral};
       }
     }
   }

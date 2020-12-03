@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import DesktopCategories from '../components/features/desktopCategories';
 import Accordion from '../components/features/accordion';
 import { breakpoints } from '../utils/breakpoints';
+import MobileCategories from '../components/features/mobileCategories';
 
 const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
   return (
@@ -15,6 +16,7 @@ const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
       <StyledContainer>
         <aside>
           <DesktopCategories/>
+          <MobileCategories/>
         </aside>
         <div className='subpage-wrapper'>
           <PageTitle title={category.title} />
@@ -47,12 +49,17 @@ const StyledContainer = styled.section`
   flex-wrap: wrap;
   margin:  auto;
   width: 100%;
-  padding: 0 10px;
+
+  .subpage-wrapper {
+    margin-left: 50px;
+
+    h4 {
+      font-size: 1.2rem;
+    }
+  }
 
 
   @media ${breakpoints.md} {
-
-
     aside {
       flex: 0 0 100%;
     }
@@ -60,7 +67,6 @@ const StyledContainer = styled.section`
     .subpage-wrapper {
       padding: 0 20px;
     }
-
   }
 
   @media ${breakpoints.lg} {
@@ -80,7 +86,7 @@ const StyledContainer = styled.section`
 `;
 
 const StyledItems = styled.div`
-  padding-top: 60px;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   width: 100%;
