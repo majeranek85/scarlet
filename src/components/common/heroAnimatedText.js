@@ -1,20 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import { breakpoints } from '../../utils/breakpoints';
+import { theme } from '../../utils/theme';
 
 const HeroAnimatedText = () => {
   return (
     <StyledWrapper>
-      <div className='text-area'>
-        <span>s</span>
-        <span>c</span>
-        <span>a</span>
-        <span>r</span>
-        <span>l</span>
-        <span>e</span>
-        <span>t</span>
-      </div>
-      <p>Mobilny gabinet kosmetyczny</p>
+      <h1>
+        Scarlet
+      </h1>
+      <p><span>Mobilny</span> gabinet kosmetyczny</p>
     </StyledWrapper>
   );
 };
@@ -24,98 +19,58 @@ export default HeroAnimatedText;
 // style
 
 const StyledWrapper = styled.div`
-  text-transform: uppercase;
   text-align: center;
 
-  .text-area {
-    font-size: 30px;
+  h1 {
+    font-size: 2.5rem;
     font-family: 'roboto';
-    //font-weight: 100;
-    //transition: all 0.5s ease-out;
-    text-shadow: 3px 3px 5px gray;
-
-    span {
-      color: #262626;
-      opacity: 1;
-      //transform: rotate(-180deg);
-      //animation: animate 3s forwards;
-      display: inline-block;
-      padding-right: 10px;
-
-      /*:nth-of-type(2) {
-        animation-delay: 0.1s;
-      }
-      :nth-of-type(3) {
-        animation-delay: 0.2s;
-      }
-      :nth-of-type(4) {
-        animation-delay: 0.3s;
-      }
-      :nth-of-type(5) {
-        animation-delay: 0.4s;
-      }
-      :nth-of-type(6) {
-        animation-delay: 0.5s;
-      }
-      :nth-of-type(7) {
-        animation-delay: 0.6s;
-      }*/
-    }
+    text-shadow: 0.3rem 0.3rem 0.5rem gray;
+    text-transform: uppercase;
+    font-weight:100;
+    //font-style: italic;
   }
 
   p {
-    font-size: 10px;
+    font-size: 0.9rem;
     font-family: 'oxygen';
     letter-spacing: 1px;
     transition: all 0.5s ease-out;
     margin-bottom: 0;
+    font-weight: 400;
+
+    span {
+      color: ${theme.coral};
+      font-weight: 700;
+    }
   }
 
-  /*@keyframes animate {
-    30% {
-      transform: translate(0, -50px) rotate(180deg) scale(1);
-    }
-    50% {
-      transform: translate(0, -20px) rotate(0deg) scale(1);
-      opacity: 1;
-    }
-    80% {
-      transform: translate(-100px, -100px) rotate(-180deg) scale(1.5);
-      opacity: 0;
-    }
-    100% {
-      transform: translate(0) rotate(0) scale(1);
-      opacity: 1;
-    }
-  }*/
-
   @media ${breakpoints.sm} {
-    .text-area {
-      font-size: 50px;
+    h1 {
+      font-size: 3rem;
     }
 
     p {
-      font-size: 18px;
+      font-size: 1.2rem;
     }
   }
 
   @media ${breakpoints.md} {
-    .text-area {
-      font-size: 70px;
+    h1 {
+      font-size: 3.4rem;
     }
 
     p {
-      font-size: 25px;
+      font-size: 1.5rem;
     }
   }
 
   @media ${breakpoints.lg} {
-    .text-area {
-      font-size: 110px;
+    h1 {
+      font-size: 5.5rem;
     }
 
     p {
-      font-size: 39px;
+      font-size: 2.5rem;
     }
   }
 `;

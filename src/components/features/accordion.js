@@ -25,49 +25,7 @@ const Accordion = (props) => {
         <p className='accordion-title'>{props.title}</p>
         <FontAwesomeIcon className={`${setRotate}`} icon={faChevronRight}/>
       </button>
-      <div ref={content} style={{maxHeight: `${setHeight}`}} className='accordion-content'>
-
-        {props.effects.length === 0 ? null :
-          <div className='accordion-text'>
-            <h5>Efekty</h5>
-            <ul>
-              {props.effects.map((opt, id) => (
-                <li key={id}>
-                  <p>{opt.name}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
-
-        {props.recommendations.length === 0 ? null :
-          <div className='accordion-text'>
-            <h5>Wskazania</h5>
-            <ul>
-              {props.recommendations.map((opt, id) => (
-                <li key={id}>
-                  <p>{opt.name}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
-
-        {props.contraindications.length === 0 ? null :
-          <div className='accordion-text'>
-            <h5>Przeciwwskazania</h5>
-            <ul>
-              {props.contraindications.map((opt, id) => (
-                <li key={id}>
-                  <p>{opt.name}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-        }
-
-
-      </div>
+      <div ref={content} style={{maxHeight: `${setHeight}`}} dangerouslySetInnerHTML={{__html: props.content}} className='accordion-content'/>
     </StyledAccordion>
   )
 }
@@ -79,7 +37,8 @@ export default Accordion;
 const StyledAccordion = styled.div`
   flex: 0 0 100%;
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
+  flex-direction: column;
 
   .accordion {
     display: flex;
@@ -122,8 +81,9 @@ const StyledAccordion = styled.div`
     overflow: hidden;
     transition: max-height 0.6s ease;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    margin: 5px auto 5px 0;
+
 
     .accordion-text {
       padding: 30px;

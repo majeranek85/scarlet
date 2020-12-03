@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakpoints } from '../../utils/breakpoints';
 import { theme } from '../../utils/theme';
 
 const PageTitle = props => {
@@ -15,23 +16,34 @@ export default PageTitle;
 
 // Style
 
-const StyledTitle = styled.header`
-  padding-top: 20px;
+const StyledTitle = styled.div`
+  padding-top: 0.2rem;
   position: relative;
+  z-index: 0;
+  ;
 
   h1 {
+    font-size: 2rem;
     padding-top: 1rem;
     text-align: center;
+    font-weight: 300;
   }
 
   :after {
     position: absolute;
-    bottom: -10%;
+    bottom: -15%;
     left: 50%;
     transform: translateX(-50%);
     content: '';
-    height: 4px;
-    width: 150px;
+    height: 3px;
+    width: 100px;
     background: ${theme.coral};
+  }
+
+  @media ${breakpoints.md} {
+    h1 {
+      font-size: 2.5rem;
+    }
+
   }
 `;
