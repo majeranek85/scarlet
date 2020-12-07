@@ -35,6 +35,7 @@ const Hero = () => {
             <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
             <span className='visually-hidden'>Facebook</span>
           </Button>
+          <Button className='callToAction' href='/contact'>Umów się już teraz!</Button>
         </div>
       </div>
     </StyledContainer>
@@ -64,9 +65,30 @@ const StyledContainer = styled.section`
     transform: translateY(-50%);
 
     .socials {
-      margin-top: 15px;
+      margin-top: 1rem;
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
+
+      a {
+        flex: 0 0 45px;
+
+        :nth-of-type(1) {
+          order: 2;
+        }
+        :nth-of-type(2) {
+          order: 3;
+        }
+      }
+
+      .callToAction {
+        flex: 1 0 200px;
+        text-decoration: none;
+        display: flex;
+        font-size: 1rem;
+        justify-content: center;
+        order: 1;
+      }
     }
   }
 
@@ -78,6 +100,9 @@ const StyledContainer = styled.section`
 
     .text-wrapper {
       left: 15%;
+
+      .callToAction {
+      }
     }
   }
 `;

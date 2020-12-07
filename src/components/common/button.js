@@ -23,16 +23,16 @@ export default Button;
 const StyledButton = styled.a`
   text-transform: uppercase;
   text-decoration: none;
-  background-color: ${theme.primary};
+  background-color: ${theme.secondary};
   color: ${theme.text};
   font-size: 25px;
   line-height: 25px;
   padding: 10px 10px;
-  margin: 0 5px;
+  margin: 5px;
   width: 45px;
   height: 45px;
   text-align: center;
-  border-radius: 20%20%;
+  border-radius: 5px;
 
   .visually-hidden {
     clip-path: inset(100%);
