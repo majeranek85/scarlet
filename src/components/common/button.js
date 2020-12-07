@@ -27,13 +27,14 @@ const StyledButton = styled.a`
   background-color: ${theme.secondary};
   color: ${theme.text};
   font-size: 20px;
-  line-height: 25px;
-  padding: 3.5px;
+  line-height: 20px;
+  padding: 7px;
   margin: 3px;
-  width: 35px;
-  height: 35px;
+  width: 34px;
+  height: 34px;
   text-align: center;
   border-radius: 5px;
+
 
   .visually-hidden {
     clip-path: inset(100%);
@@ -52,9 +53,7 @@ const StyledButton = styled.a`
   }
 
   @media ${breakpoints.md} {
-    font-size: 25px;
-    line-height: 25px;
-    padding: 10px 10px;
+    padding: 10px;
     margin: 5px;
     width: 45px;
     height: 45px;

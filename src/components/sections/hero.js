@@ -70,10 +70,6 @@ const StyledContainer = styled.section`
       justify-content: center;
       flex-wrap: wrap;
 
-      a {
-        flex: 0 0 45px;
-      }
-
       .callToAction {
         flex: 1 0 200px;
         text-decoration: none;
