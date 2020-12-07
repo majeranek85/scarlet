@@ -22,20 +22,18 @@ const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
         <div className='subpage-wrapper'>
           <PageTitle title={category.title} />
           <StyledItems>
-
-              {
-                category.treatments.map( item => (
-                  <div key={item.slug}>
-                    <h4>{item.name}</h4>
-                    <div dangerouslySetInnerHTML={{__html: item.descriptionNode.childMarkdownRemark.html}}/>
-                    <Accordion
-                      title='czytaj więcej'
-                      content={item.effectsNode.childMarkdownRemark.html}
-                    />
-                  </div>
-                ))
-              }
-
+            {
+              category.treatments.map( item => (
+                <div key={item.slug}>
+                  <h4>{item.name}</h4>
+                  <div dangerouslySetInnerHTML={{__html: item.descriptionNode.childMarkdownRemark.html}}/>
+                  <Accordion
+                    title='czytaj więcej'
+                    content={item.effectsNode.childMarkdownRemark.html}
+                  />
+                </div>
+              ))
+            }
           </StyledItems>
         </div>
       </StyledContainer>
