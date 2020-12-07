@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import styled from 'styled-components';
 import { theme } from '../../utils/theme';
+import { breakpoints } from '../../utils/breakpoints';
 
 const Button = ({ children, ...props }) => {
   return (
@@ -25,12 +26,12 @@ const StyledButton = styled.a`
   text-decoration: none;
   background-color: ${theme.secondary};
   color: ${theme.text};
-  font-size: 25px;
+  font-size: 20px;
   line-height: 25px;
-  padding: 10px 10px;
-  margin: 5px;
-  width: 45px;
-  height: 45px;
+  padding: 3.5px;
+  margin: 3px;
+  width: 35px;
+  height: 35px;
   text-align: center;
   border-radius: 5px;
 
@@ -48,5 +49,14 @@ const StyledButton = styled.a`
     color: #fff;
     transition: all 0.5s;
     background: ${theme.text};
+  }
+
+  @media ${breakpoints.md} {
+    font-size: 25px;
+    line-height: 25px;
+    padding: 10px 10px;
+    margin: 5px;
+    width: 45px;
+    height: 45px;
   }
 `;

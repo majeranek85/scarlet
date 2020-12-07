@@ -27,7 +27,7 @@ const StyledWrapper = styled.div`
     text-shadow: 0.3rem 0.3rem 0.5rem gray;
     text-transform: uppercase;
     font-weight:100;
-    //font-style: italic;
+    margin-bottom: 0;
   }
 
   p {
