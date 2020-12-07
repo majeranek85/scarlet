@@ -53,6 +53,7 @@ const StyledButton = styled.a`
   }
 
   @media ${breakpoints.md} {
+    font-size: 25px;
     padding: 10px;
     margin: 5px;
     width: 45px;
