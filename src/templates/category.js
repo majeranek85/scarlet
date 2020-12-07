@@ -8,6 +8,7 @@ import DesktopCategories from '../components/features/desktopCategories';
 import Accordion from '../components/features/accordion';
 import { breakpoints } from '../utils/breakpoints';
 import MobileCategories from '../components/features/mobileCategories';
+import { theme } from '../utils/theme';
 
 const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
   return (
@@ -49,10 +50,12 @@ const StyledContainer = styled.section`
   flex-wrap: wrap;
   margin:  auto;
   width: 100%;
+  background: ${theme.textLight};
 
   .subpage-wrapper {
     margin-left: 50px;
     padding-right: 10px;
+    background: transparent;
 
     h4 {
       font-size: 1rem;
@@ -83,7 +86,7 @@ const StyledContainer = styled.section`
   }
 
   @media ${breakpoints.lg} {
-    background: transparent;
+    background: ${theme.textLight};
     width: 80%;
     flex-direction: row;
     justify-content: start;

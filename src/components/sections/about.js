@@ -54,6 +54,7 @@ const StyledWrapper = styled.div`
   @media ${breakpoints.md} {
     width: 80%;
     background: #fff;
+    margin-bottom: 3rem;
   }
 `;
 
