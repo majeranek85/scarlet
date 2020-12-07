@@ -61,7 +61,7 @@ const StyledContainer = styled.section`
   .text-wrapper {
     position: absolute;
     top: 50%;
-    left: 4%;
+    left: 5px;
     transform: translateY(-50%);
 
     .socials {
@@ -72,13 +72,6 @@ const StyledContainer = styled.section`
 
       a {
         flex: 0 0 45px;
-
-        :nth-of-type(1) {
-          order: 2;
-        }
-        :nth-of-type(2) {
-          order: 3;
-        }
       }
 
       .callToAction {
@@ -87,7 +80,6 @@ const StyledContainer = styled.section`
         display: flex;
         font-size: 1rem;
         justify-content: center;
-        order: 1;
       }
     }
   }
