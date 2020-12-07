@@ -5,6 +5,7 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import DesktopCategories from '../components/features/desktopCategories';
 import MobileCategoriesStatic from '../components/features/mobileCategoriesStatic';
+import { theme } from '../utils/theme';
 
 const Treatments = () => {
 
@@ -29,6 +30,8 @@ const StyledContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
+  background: ${theme.textLight};
+  padding-bottom: 9.6rem;
 
   ul {
     flex-direction: row;

@@ -98,6 +98,7 @@ const MenuIcon = styled.button`
   outline: none;
   z-index: 11;
   padding: 0;
+
   :focus {
     outline: thin dotted;
   }

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from '../../utils/theme';
-
 import Header from './header';
 import './layout.css';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
       <PageContainer className='page-container'>
         <Header siteTitle={data.site.siteMetadata.title} className='header-container' />
         <ChildContainer className='page-content-container'>{children}</ChildContainer>
-        <footer>© {new Date().getFullYear()}, Scarlet Studio Urody</footer>
+        <Footer/>
       </PageContainer>
     </ThemeProvider>
   );
@@ -46,8 +46,8 @@ const PageContainer = styled.div`
 const ChildContainer = styled.main`
   position: relative;
   flex-grow: 1;
-  background: #fff;
+  background: ${theme.secondary};
   width: 100%;
   padding: 0;
-  margin: 3rem auto;
+  margin: 3rem auto 0 auto;
 `;

@@ -4,6 +4,7 @@ import PageTitle from '../components/common/pageTitle';
 import Thumbnails from '../components/features/thumbnails';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
+import { theme } from '../utils/theme';
 
 const GalleryPage = () => (
   <Layout>
@@ -23,4 +24,5 @@ const StyledContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  background: ${theme.textLight};
 `;
