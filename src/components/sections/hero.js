@@ -61,7 +61,7 @@ const StyledContainer = styled.section`
   .text-wrapper {
     position: absolute;
     top: 50%;
-    left: 8%;
+    left: 4%;
     transform: translateY(-50%);
 
     .socials {
