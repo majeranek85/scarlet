@@ -39,8 +39,10 @@ const DesktopCategories = () => {
             <Link to={`/treatments/${node.slug}`} activeClassName='active'>
               <div className='image-box'>
                 <img src={node.image.fluid.srcSet} alt={node.image.alt}/>
+                <div className='overlay'>
+                  <p>{node.title}</p>
+                </div>
               </div>
-              <p>{node.title}</p>
             </Link>
           </li>
         ))}
@@ -78,11 +80,28 @@ const StyledList = styled.ul`
         border-radius: 5px;
         overflow: hidden;
         margin: 0 auto;
+        position: relative;
+        z-index: 0;
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+
+        .overlay {
+          z-index: 3;
+          background: ${theme.text};
+          background: linear-gradient(180deg, rgba(68,44,46,0) 10%, rgba(68,44,46,0.8) 100%);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          color: ${theme.textLight};
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
         }
       }
 

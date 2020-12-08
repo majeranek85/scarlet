@@ -24,15 +24,14 @@ export default Button;
 const StyledButton = styled.a`
   text-transform: uppercase;
   text-decoration: none;
-  background-color: ${theme.secondary};
-  color: ${theme.text};
-  font-size: 20px;
-  line-height: 20px;
+  background-color: ${theme.coral};
+  color: ${theme.textLight};
+  font-size: 1rem;
   padding: 7px;
   margin: 3px;
-  width: 34px;
-  height: 34px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 5px;
 
 
@@ -47,16 +46,15 @@ const StyledButton = styled.a`
   }
 
   :hover {
-    color: #fff;
+    color: ${theme.coral};
     transition: all 0.5s;
-    background: ${theme.text};
+    background: ${theme.textLight};
+    border: 2px solid ${theme.coral};
   }
 
   @media ${breakpoints.md} {
-    font-size: 25px;
+    font-size: 2rem;
     padding: 10px;
     margin: 5px;
-    width: 45px;
-    height: 45px;
   }
 `;

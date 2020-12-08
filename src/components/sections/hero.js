@@ -70,8 +70,12 @@ const StyledContainer = styled.section`
       justify-content: center;
       flex-wrap: wrap;
 
+      a {
+        flex: 0 1 45px;
+      }
+
       .callToAction {
-        flex: 1 0 200px;
+        flex: 0 0 250px;
         text-decoration: none;
         display: flex;
         font-size: 1rem;
@@ -88,9 +92,6 @@ const StyledContainer = styled.section`
 
     .text-wrapper {
       left: 15%;
-
-      .callToAction {
-      }
     }
   }
 `;

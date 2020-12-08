@@ -24,6 +24,7 @@ const StyledWrapper = styled.div`
   h1 {
     font-size: 2.5rem;
     font-family: 'roboto';
+    color: ${theme.text};
     text-shadow: 0.3rem 0.3rem 0.5rem gray;
     text-transform: uppercase;
     font-weight:100;
@@ -39,7 +40,7 @@ const StyledWrapper = styled.div`
     font-weight: 400;
 
     span {
-      color: ${theme.coral};
+      color: ${theme.header};
       font-weight: 700;
     }
   }

@@ -4,6 +4,7 @@ import Img from 'gatsby-image';
 import styled from 'styled-components';
 import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { theme } from '../../utils/theme';
 
 const Slider = () => {
   const data = useStaticQuery(graphql`
@@ -39,51 +40,45 @@ const Slider = () => {
     }
   `);
 
-  const style = {
-    width: '100%',
-    right: 0,
-    left: 0,
-  };
-
   return (
-    <Carousel>
+    <StyledCarousel>
       <Carousel.Item>
-        <Img fluid={data.slide1.childImageSharp.fluid} alt='1' />
-        <Carousel.Caption style={style}>
-          <StyledCap>
-            <h3>First slide label</h3>
+        <Img loading='lazy' fluid={data.slide1.childImageSharp.fluid} alt='1' />
+        <Carousel.Caption>
+          <div>
+            <h3>Stylizacja rzęs i brwi</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </StyledCap>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Img fluid={data.slide2.childImageSharp.fluid} alt='2' />
-        <Carousel.Caption style={style}>
-          <StyledCap>
-            <h3>First slide label</h3>
+        <Img loading='lazy' fluid={data.slide2.childImageSharp.fluid} alt='2' />
+        <Carousel.Caption>
+          <div>
+            <h3>Zabiegi pielęgnacyjne</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </StyledCap>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Img fluid={data.slide3.childImageSharp.fluid} alt='3' />
-        <Carousel.Caption style={style}>
-          <StyledCap>
-            <h3>First slide label</h3>
+        <Img loading='lazy' fluid={data.slide3.childImageSharp.fluid} alt='3' />
+        <Carousel.Caption>
+          <div>
+            <h3>Zabiegi oczyszczające i złuszczające</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </StyledCap>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <Img fluid={data.slide4.childImageSharp.fluid} alt='4' />
-        <Carousel.Caption style={style}>
-          <StyledCap>
-            <h3>First slide label</h3>
+        <Img loading='lazy' fluid={data.slide4.childImageSharp.fluid} alt='4' />
+        <Carousel.Caption>
+          <div>
+            <h3>Kosmetologia estetyczna</h3>
             <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </StyledCap>
+          </div>
         </Carousel.Caption>
       </Carousel.Item>
-    </Carousel>
+    </StyledCarousel>
   );
 };
 
@@ -91,6 +86,17 @@ export default Slider;
 
 // Style
 
-const StyledCap = styled.div`
-  background: rgba(0, 0, 0, 0.2);
+const StyledCarousel = styled(Carousel)`
+  margin: 3rem auto;
+  .carousel-inner::after {
+    position: absolute;
+    content:'';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background: ${theme.text};
+    background: linear-gradient(180deg, rgba(68,44,46,0) 10%, rgba(68,44,46,0.8) 100%);
+  }
 `;
+
