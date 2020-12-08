@@ -75,11 +75,12 @@ const StyledContainer = styled.section`
       }
 
       .callToAction {
-        flex: 0 0 250px;
+        flex: 0 0 170px;
         text-decoration: none;
         display: flex;
-        font-size: 1rem;
+        font-size: 0.8rem;
         justify-content: center;
+        font-weight: 700;
       }
     }
   }
@@ -92,6 +93,11 @@ const StyledContainer = styled.section`
 
     .text-wrapper {
       left: 15%;
+
+      .socials .callToAction {
+        flex: 0 0 220px;
+        font-size: 1rem;
+      }
     }
   }
 `;

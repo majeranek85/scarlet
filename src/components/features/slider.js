@@ -47,7 +47,7 @@ const Slider = () => {
         <Carousel.Caption>
           <div>
             <h3>Stylizacja rzęs i brwi</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
@@ -56,7 +56,7 @@ const Slider = () => {
         <Carousel.Caption>
           <div>
             <h3>Zabiegi pielęgnacyjne</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
@@ -65,7 +65,7 @@ const Slider = () => {
         <Carousel.Caption>
           <div>
             <h3>Zabiegi oczyszczające i złuszczające</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
@@ -74,7 +74,7 @@ const Slider = () => {
         <Carousel.Caption>
           <div>
             <h3>Kosmetologia estetyczna</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
           </div>
         </Carousel.Caption>
       </Carousel.Item>
@@ -88,15 +88,20 @@ export default Slider;
 
 const StyledCarousel = styled(Carousel)`
   margin: 3rem auto;
+
   .carousel-inner::after {
     position: absolute;
     content:'';
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 100%;
     background: ${theme.text};
-    background: linear-gradient(180deg, rgba(68,44,46,0) 10%, rgba(68,44,46,0.8) 100%);
+    background: linear-gradient(180deg, rgba(68,44,46,0) 0%, rgba(68,44,46,0.8) 100%);
+
+    .carousel-caption p {
+      padding-top: 10px;
+    }
   }
 `;
 
