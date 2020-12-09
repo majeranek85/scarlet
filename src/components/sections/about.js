@@ -14,13 +14,13 @@ const description = {
 const About = () => {
   return (
     <StyledContainer>
-      <StyledWrapper>
+      <div className='content-wrapper'>
         <PageTitle title={description.sectionTitle} />
         <p>{description.paragraph}</p>
-        <SliderWrapper>
+        <div className='slider-wrapper'>
           <Slider />
-        </SliderWrapper>
-      </StyledWrapper>
+        </div>
+      </div>
     </StyledContainer>
   );
 };
@@ -34,38 +34,39 @@ const StyledContainer = styled.section`
   padding-top: 0;
   font-size: 0.9rem;
 
+  .content-wrapper {
+    width: 100%;
+    background: ${theme.secondary};
+    margin: auto;
+    text-align: center;
+    padding: 1rem;
+
+    p {
+      padding-top: 40px;
+    }
+  }
+
   @media ${breakpoints.md} {
-    padding-top: 5rem;
     font-size: 1rem;
+
+    .content-wrapper {
+      width: 80%;
+      background: #fff;
+      margin: 5rem auto;
+    }
+  }
+
+  @media ${breakpoints.lg} {
+
+    .content-wrapper {
+      margin: 6rem auto;
+    }
+
+    .slider-wrapper{
+      margin: 0 auto;
+      width: 70%;
+    }
   }
 `;
 
-const StyledWrapper = styled.div`
-  width: 100%;
-  background: ${theme.secondary};
-  margin: 0 auto;
-  text-align: center;
-  padding: 1rem;
 
-  p {
-    padding-top: 40px;
-  }
-
-  @media ${breakpoints.md} {
-    width: 80%;
-    background: #fff;
-    margin-bottom: 3rem;
-  }
-`;
-
-const SliderWrapper = styled.div`
-  .carousel-caption,
-  .carousel-indicators {
-    z-index: 5;
-  }
-
-  @media ${breakpoints.xl} {
-    margin: 0 auto;
-    width: 70%;
-  }
-`;

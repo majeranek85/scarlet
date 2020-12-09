@@ -2,11 +2,12 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import HeroAnimatedText from '../common/heroAnimatedText';
+//import HeroAnimatedText from '../common/heroAnimatedText';
 import Button from '../common/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { breakpoints } from '../../utils/breakpoints';
+import { theme } from '../../utils/theme';
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -25,8 +26,16 @@ const Hero = () => {
     <StyledContainer>
       <Img fluid={data.face.childImageSharp.fluid} alt='Beautiful face' />
       <div className='text-wrapper'>
-        <HeroAnimatedText />
-        <div className='socials'>
+
+        <h1>
+          <span>
+            Mobilny
+          </span>
+           gabinet kosmetyczny
+        </h1>
+
+        <div className='buttons'>
+        <Button className='callToAction' href='/contact'>Umów się już teraz!</Button>
           <Button href='https://instagram.com' target='_blank'>
             <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             <span className='visually-hidden'>Instagram</span>
@@ -35,8 +44,8 @@ const Hero = () => {
             <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
             <span className='visually-hidden'>Facebook</span>
           </Button>
-          <Button className='callToAction' href='/contact'>Umów się już teraz!</Button>
         </div>
+
       </div>
     </StyledContainer>
   );
@@ -50,7 +59,7 @@ const StyledContainer = styled.section`
   position: relative;
   display: flex;
   justify-content: end;
-  background: #fff;
+  background: ${theme.textLight};
 
   .gatsby-image-wrapper {
     max-height: 100vh;
@@ -63,8 +72,25 @@ const StyledContainer = styled.section`
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
+    width: 55%;
 
-    .socials {
+    h1 {
+      display:flex;
+      flex-direction: column;
+      font-size: 1.3rem;
+      font-family: 'oxygen';
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      text-align: center;
+
+      span {
+        color: ${theme.coral};
+        font-weight: 700;
+        font-size: 2.6rem;
+      }
+    }
+
+    .buttons {
       margin-top: 1rem;
       display: flex;
       justify-content: center;
@@ -75,7 +101,7 @@ const StyledContainer = styled.section`
       }
 
       .callToAction {
-        flex: 0 0 170px;
+        flex: 0 0 200px;
         text-decoration: none;
         display: flex;
         font-size: 0.8rem;
@@ -87,16 +113,44 @@ const StyledContainer = styled.section`
 
   @media ${breakpoints.md}{
     .gatsby-image-wrapper {
-      width: 50vw;
-      max-height: 100vh;
+      width: 100vw;
     }
 
     .text-wrapper {
-      left: 15%;
+      left: 10%;
 
-      .socials .callToAction {
+      h1 {
+        font-size: 2rem;
+        text-align: unset;
+
+        span {
+          font-size: 4rem;
+        }
+      }
+
+      .buttons {
+        justify-content: start;
+
+        .callToAction {
         flex: 0 0 220px;
         font-size: 1rem;
+        }
+      }
+    }
+  }
+
+  @media ${breakpoints.lg}{
+    .gatsby-image-wrapper {
+      width: 90vw;
+    }
+
+    .text-wrapper {
+      h1 {
+        font-size: 3.5rem;
+
+        span {
+          font-size: 7rem;
+        }
       }
     }
   }

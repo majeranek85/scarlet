@@ -24,8 +24,9 @@ export default Button;
 const StyledButton = styled.a`
   text-transform: uppercase;
   text-decoration: none;
-  background-color: ${theme.coral};
-  color: ${theme.textLight};
+  background-color: ${theme.textLight};
+  border: 1px solid ${theme.coral};
+  color: ${theme.coral};
   font-size: 1rem;
   padding: 7px;
   margin: 3px;
@@ -46,9 +47,9 @@ const StyledButton = styled.a`
   }
 
   :hover {
-    color: ${theme.coral};
+    color: ${theme.textLight};
     transition: all 0.5s;
-    background: ${theme.textLight};
+    background: ${theme.coral};
     border: 2px solid ${theme.coral};
   }
 
@@ -56,5 +57,6 @@ const StyledButton = styled.a`
     font-size: 2rem;
     padding: 10px;
     margin: 5px;
+    border-width: 2px;
   }
 `;

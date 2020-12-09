@@ -88,7 +88,8 @@ const StyledContainer = styled.section`
     width: 80%;
     flex-direction: row;
     justify-content: start;
-    margin: 50px auto;
+    margin: 6rem auto;
+    padding: 1rem;
 
     aside {
       flex: 1;

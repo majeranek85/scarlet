@@ -14,9 +14,11 @@ const ContactPage = () => {
 
           <PageTitle title='Kontakt' />
           <h4 className='contact-name'>Scarlet Studio Urody Iwona Kosińska</h4>
+          <h5>Adres:</h5>
           <p>Matki Teresy z Kalkuty 6/74</p>
           <p>19-300 Ełk</p>
-          <p> tel: +48 514 737 283</p>
+          <h5>Telefon:</h5>
+          <p>+48 514-737-283</p>
 
       </StyledContainer>
     </Layout>
@@ -29,19 +31,20 @@ const StyledContainer = styled.section`
   display: flex;
   flex-direction: column;
   background: ${theme.textLight};
-  padding-bottom: 57%;
   text-align: center;
   width: 100%;
+  padding: 1rem;
 
   .contact-name {
     margin-top: 3rem;
   }
 
-  @media ${breakpoints.md} {
-    margin: 3rem auto;
-    width: 80%;
-    padding-bottom: 10%;
+  h5 {
+    margin-top: 1rem;
   }
 
-
+  @media ${breakpoints.md} {
+    width: 80%;
+    margin: 5rem auto;
+  }
 `;

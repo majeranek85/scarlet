@@ -128,6 +128,11 @@ const StyledList = styled.ul`
   @media ${breakpoints.lg} {
     width: 80%;
     flex-direction: column;
-    margin: 50px 0 0 0;
+    margin: 2rem auto;
+
+    li .image-box {
+        width: 180px;
+        height: 130px;
+    }
   }
 `;
