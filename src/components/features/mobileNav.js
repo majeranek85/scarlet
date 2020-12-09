@@ -65,7 +65,7 @@ const MenuBar = styled.header`
   width: 100%;
   background: ${theme.primary};
   border-bottom: white;
-  z-index: 10;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
