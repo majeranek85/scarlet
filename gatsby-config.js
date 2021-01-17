@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Scarlet Studio Urody`,
-    description: ``,
+    description: `Kosmetologia, zabiegi pielęgnacyjne, stylizacja rzęs i brwi oraz bezigłowe wypełnianie hialuronem`,
     author: `Kodula - Marta Majerowska`,
   },
   plugins: [
@@ -20,13 +20,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Scarlet Studio Urody`,
+        short_name: `Scarlet`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fedbd0`,
+        theme_color: `#fedbd0`,
         display: `minimal-ui`,
-        icon: `src/images/favicon-32x32.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-512x512.png`, // This path is relative to the root of the site.
       },
     },
     {
@@ -50,6 +50,12 @@ module.exports = {
         gfm: true,
         // Plugins configs
         plugins: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/treatments/*`],
       },
     },
   ],
