@@ -92,7 +92,7 @@ const StyledList = styled.ul`
         .overlay {
           z-index: 3;
           background: ${theme.text};
-          background: linear-gradient(180deg, rgba(68,44,46,0) 10%, rgba(68,44,46,0.8) 100%);
+          background: ${theme.linearGradient};
           position: absolute;
           bottom: 0;
           left: 0;

@@ -45,37 +45,25 @@ const Slider = () => {
       <Carousel.Item>
         <Img loading='lazy' fluid={data.slide1.childImageSharp.fluid} alt='1' />
         <Carousel.Caption>
-          <div>
-            <h3>Stylizacja rzęs i brwi</h3>
-            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
+          <h3>Stylizacja rzęs i brwi</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <Img loading='lazy' fluid={data.slide2.childImageSharp.fluid} alt='2' />
         <Carousel.Caption>
-          <div>
-            <h3>Zabiegi pielęgnacyjne</h3>
-            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
+          <h3>Zabiegi pielęgnacyjne</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <Img loading='lazy' fluid={data.slide3.childImageSharp.fluid} alt='3' />
         <Carousel.Caption>
-          <div>
-            <h3>Zabiegi oczyszczające i złuszczające</h3>
-            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
+          <h3>Zabiegi oczyszczające i złuszczające</h3>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <Img loading='lazy' fluid={data.slide4.childImageSharp.fluid} alt='4' />
         <Carousel.Caption>
-          <div>
-            <h3>Kosmetologia estetyczna</h3>
-            <p style={{paddingTop: '10px'}}>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </div>
+          <h3>Kosmetologia estetyczna</h3>
         </Carousel.Caption>
       </Carousel.Item>
     </StyledCarousel>
@@ -97,11 +85,10 @@ const StyledCarousel = styled(Carousel)`
     width: 100%;
     height: 100%;
     background: ${theme.text};
-    background: linear-gradient(180deg, rgba(68,44,46,0) 0%, rgba(68,44,46,0.8) 100%);
-
-    .carousel-caption p {
-      padding-top: 10px;
-    }
+    background: ${theme.linearGradient};
   }
-`;
 
+  .carousel-caption h3 {
+      padding-bottom: 30px;
+    }
+`;

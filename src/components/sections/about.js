@@ -8,7 +8,8 @@ import PageTitle from '../common/pageTitle';
 const description = {
   sectionTitle: 'O nas',
   paragraph:
-    'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.',
+  'Kosmetologia, zabiegi pielęgnacyjne, stylizacja rzęs i brwi oraz bezigłowe wypełnianie hialuronem to specjalność Studia Urody Scarlet. W bogatej ofercie naszego gabinetu znajdą Państwo wiele zabiegów pielęgnacyjnych poprawiających kondycję skóry oraz niwelujące oznaki starzenia się. Oferujemy m.in. mezoterapię,  peeling kawitacyjny, depilację laserową oraz woskiem, wypełnianie zmarszczek i powiększanie ust metoda bezigłową. Zapraszam do zapoznania się z ofertą w razie pytań służę pomocą.'
+  ,
 };
 
 const About = () => {
