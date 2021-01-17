@@ -11,15 +11,13 @@ const ContactPage = () => {
     <Layout>
       <SEO title='Kontakt' />
       <StyledContainer>
-
-          <PageTitle title='Kontakt' />
-          <h4 className='contact-name'>Scarlet Studio Urody Iwona Kosińska</h4>
-          <h5>Adres:</h5>
-          <p>Matki Teresy z Kalkuty 6/74</p>
-          <p>19-300 Ełk</p>
-          <h5>Telefon:</h5>
-          <p>+48 514-737-283</p>
-
+        <PageTitle title='Kontakt' />
+        <h4 className='contact-name'>Scarlet Studio Urody Iwona Kosińska</h4>
+        <h5>Adres:</h5>
+        <p>Matki Teresy z Kalkuty 6/74</p>
+        <p>19-300 Ełk</p>
+        <h5>Telefon:</h5>
+        <p>+48 514-737-283</p>
       </StyledContainer>
     </Layout>
   );
