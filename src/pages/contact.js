@@ -12,11 +12,11 @@ const ContactPage = () => {
       <SEO title='Kontakt' />
       <StyledContainer>
         <PageTitle title='Kontakt' />
-        <h4 className='contact-name'>Scarlet Studio Urody Iwona Kosińska</h4>
-        <h5>Adres:</h5>
+        <h2 className='contact-name'>Scarlet Studio Urody Iwona Kosińska</h2>
+        <h3>Adres:</h3>
         <p>Matki Teresy z Kalkuty 6/74</p>
         <p>19-300 Ełk</p>
-        <h5>Telefon:</h5>
+        <h3>Telefon:</h3>
         <p>+48 514-737-283</p>
       </StyledContainer>
     </Layout>
@@ -33,16 +33,12 @@ const StyledContainer = styled.section`
   width: 100%;
   padding: 1rem;
 
-  .contact-name {
-    margin-top: 3rem;
-  }
-
-  h5 {
+  h3 {
     margin-top: 1rem;
   }
 
   @media ${breakpoints.md} {
     width: 80%;
-    margin: 5rem auto;
+    margin: 4rem auto;
   }
 `;

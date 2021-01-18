@@ -35,7 +35,7 @@ const StyledContainer = styled.section`
 
   ul {
     flex-direction: row;
-    margin: 50px auto 0 auto;
+    //margin: 50px auto 0 auto;
     flex-wrap: wrap;
 
     li {

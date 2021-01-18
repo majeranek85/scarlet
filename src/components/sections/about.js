@@ -41,10 +41,6 @@ const StyledContainer = styled.section`
     margin: auto;
     text-align: center;
     padding: 1rem;
-
-    p {
-      padding-top: 40px;
-    }
   }
 
   @media ${breakpoints.md} {
