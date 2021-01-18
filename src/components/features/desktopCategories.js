@@ -59,7 +59,7 @@ const StyledList = styled.ul`
   @media ${breakpoints.md} {
     display: block;
     width: 100%;
-    margin:  50px auto 0 auto;
+    margin:  30px auto 0 auto;
     display: flex;
     list-style: none;
     text-align: center;
@@ -82,32 +82,36 @@ const StyledList = styled.ul`
         margin: 0 auto;
         position: relative;
         z-index: 0;
+        padding: 5px;
+        box-shadow: 0 0 10px 3px ${theme.coralOpacity};
 
         img {
           width: 100%;
           height: 100%;
           object-fit: cover;
+          border-radius: 5px;
         }
 
         .overlay {
           z-index: 3;
-          background: ${theme.text};
           background: ${theme.linearGradient};
           position: absolute;
           bottom: 0;
           left: 0;
-          width: 100%;
-          height: 100%;
+          width: calc(100% - 10px);
+          height: calc(100% - 10px);
           color: ${theme.textLight};
           display: flex;
           justify-content: center;
           align-items: flex-end;
+          margin: 5px;
+          border-radius: 5px;
         }
       }
 
       p {
-        margin-bottom: 20px;
-        padding-top: 10px;
+        font-size: 0.9rem;
+        padding-bottom: 10px;
       }
 
       :hover {
@@ -128,11 +132,15 @@ const StyledList = styled.ul`
   @media ${breakpoints.lg} {
     width: 80%;
     flex-direction: column;
-    margin: 2rem auto;
+    margin: 0 auto;
 
     li .image-box {
         width: 180px;
         height: 130px;
+
+      p {
+        padding-bottom: 30px;
+      }
     }
   }
 `;

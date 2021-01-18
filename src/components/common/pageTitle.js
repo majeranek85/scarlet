@@ -7,7 +7,6 @@ const PageTitle = props => {
   return (
     <StyledTitle>
       <h1>{props.title}</h1>
-      <h4>{props.subtitle}</h4>
     </StyledTitle>
   );
 };
@@ -20,11 +19,12 @@ const StyledTitle = styled.div`
   padding-top: 0.2rem;
   position: relative;
   z-index: 0;
+  margin-bottom: 50px;
+  margin-top: 30px;
   ;
 
   h1 {
     font-size: 2rem;
-    padding-top: 1rem;
     text-align: center;
     font-weight: 300;
   }

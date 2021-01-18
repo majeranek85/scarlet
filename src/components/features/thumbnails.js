@@ -46,7 +46,7 @@ const StyledContainer = styled.div`
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
-  padding-top: 60px;
+  //padding-top: 60px;
 `;
 
 const StyledImageWrapper = styled.a`

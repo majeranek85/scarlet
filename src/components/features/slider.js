@@ -76,6 +76,9 @@ export default Slider;
 
 const StyledCarousel = styled(Carousel)`
   margin: 3rem auto;
+  box-shadow: 0 0 10px 3px ${theme.coralOpacity};
+  padding: 5px;
+  border-radius: 5px;
 
   .carousel-inner::after {
     position: absolute;
