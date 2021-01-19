@@ -10,21 +10,25 @@ import { breakpoints } from '../../utils/breakpoints';
 import { theme } from '../../utils/theme';
 
 const Hero = () => {
+
   const data = useStaticQuery(graphql`
-    query {
-      face: file(relativePath: { eq: "scarlet-home-optim.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
+    {
+      datoCmsHomePage {
+        heroImage {
+          alt
+          fluid (maxWidth: 1200) {
+            ...GatsbyDatoCmsFluid_tracedSVG
           }
         }
       }
     }
   `);
 
+  const image = data.datoCmsHomePage.heroImage;
+
   return (
     <StyledContainer>
-      <Img fluid={data.face.childImageSharp.fluid} alt='Beautiful face' />
+      <Img fluid={image.fluid} alt={image.alt} />
       <div className='text-wrapper'>
 
         <h1>

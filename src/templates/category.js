@@ -24,7 +24,7 @@ const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
           <StyledItems>
             {category.treatments.map( item => (
               <div key={item.slug}>
-                <h4>{item.name}</h4>
+                <h2>{item.name}</h2>
                 <div dangerouslySetInnerHTML={{__html: item.descriptionNode.childMarkdownRemark.html}}/>
                 <Accordion
                   title='czytaj więcej'

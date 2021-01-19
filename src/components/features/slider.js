@@ -7,65 +7,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { theme } from '../../utils/theme';
 
 const Slider = () => {
+
+
   const data = useStaticQuery(graphql`
-    query {
-      slide1: file(relativePath: { eq: "scarlet-studio-slide01.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
+    {
+      datoCmsHomePage {
+        slider {
+          fluid {
+            ...GatsbyDatoCmsFluid_tracedSVG
           }
-        }
-      }
-      slide2: file(relativePath: { eq: "scarlet-studio-slide02.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      slide3: file(relativePath: { eq: "scarlet-studio-slide03.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      slide4: file(relativePath: { eq: "scarlet-studio-slide04.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1200) {
-            ...GatsbyImageSharpFluid
-          }
+          alt
+          title
         }
       }
     }
-  `);
+  `)
+
+  const slides = data.datoCmsHomePage.slider;
 
   return (
     <StyledCarousel>
-      <Carousel.Item>
-        <Img loading='lazy' fluid={data.slide1.childImageSharp.fluid} alt='1' />
-        <Carousel.Caption>
-          <h3>Stylizacja rzęs i brwi</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Img loading='lazy' fluid={data.slide2.childImageSharp.fluid} alt='2' />
-        <Carousel.Caption>
-          <h3>Zabiegi pielęgnacyjne</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Img loading='lazy' fluid={data.slide3.childImageSharp.fluid} alt='3' />
-        <Carousel.Caption>
-          <h3>Zabiegi oczyszczające i złuszczające</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <Img loading='lazy' fluid={data.slide4.childImageSharp.fluid} alt='4' />
-        <Carousel.Caption>
-          <h3>Kosmetologia estetyczna</h3>
-        </Carousel.Caption>
-      </Carousel.Item>
+      {slides.map((slide, id) => (
+        <Carousel.Item key={id}>
+          <Img loading='lazy' fluid={slide.fluid} alt={slide.alt} />
+          <Carousel.Caption>
+            <h3>{slide.title}</h3>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
     </StyledCarousel>
   );
 };
