@@ -2,7 +2,6 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-//import HeroAnimatedText from '../common/heroAnimatedText';
 import Button from '../common/button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -17,7 +16,7 @@ const Hero = () => {
         heroImage {
           alt
           fluid (maxWidth: 1200) {
-            ...GatsbyDatoCmsFluid_tracedSVG
+            ...GatsbyDatoCmsFluid
           }
         }
       }
@@ -30,21 +29,19 @@ const Hero = () => {
     <StyledContainer>
       <Img fluid={image.fluid} alt={image.alt} />
       <div className='text-wrapper'>
-
         <h1>
           <span>
             Mobilny
           </span>
            gabinet kosmetyczny
         </h1>
-
         <div className='buttons'>
         <Button className='callToAction' href='/contact'>Umów się już teraz!</Button>
-          <Button href='https://instagram.com' target='_blank'>
+          <Button aria-label='instagram' href='https://instagram.com' target='_blank'>
             <FontAwesomeIcon icon={faInstagram}></FontAwesomeIcon>
             <span className='visually-hidden'>Instagram</span>
           </Button>
-          <Button href='https://www.facebook.com/rzesy.elk.9' target='_blank'>
+          <Button aria-label='facebook' href='https://www.facebook.com/rzesy.elk.9' target='_blank'>
             <FontAwesomeIcon icon={faFacebook}></FontAwesomeIcon>
             <span className='visually-hidden'>Facebook</span>
           </Button>

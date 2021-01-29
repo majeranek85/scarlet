@@ -37,7 +37,6 @@ export default Accordion;
 const StyledAccordion = styled.div`
   flex: 0 0 100%;
   display: flex;
-  //flex-wrap: wrap;
   flex-direction: column;
 
   .accordion {

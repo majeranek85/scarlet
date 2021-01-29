@@ -45,7 +45,7 @@ const StyledContainer = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto;
+  margin: 3rem auto;
   //padding-top: 60px;
 `;
 

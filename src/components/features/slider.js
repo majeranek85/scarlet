@@ -14,7 +14,7 @@ const Slider = () => {
       datoCmsHomePage {
         slider {
           fluid {
-            ...GatsbyDatoCmsFluid_tracedSVG
+            ...GatsbyDatoCmsFluid
           }
           alt
           title

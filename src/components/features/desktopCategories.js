@@ -19,10 +19,7 @@ const DesktopCategories = () => {
           }
           slug
           title
-          treatments {
-            description
-            effects
-          }
+          id
         }
       }
     }
@@ -35,7 +32,7 @@ const DesktopCategories = () => {
     <nav>
       <StyledList>
         {categories.map( ({node}) => (
-          <li key={node.slug}>
+          <li key={node.id}>
             <Link to={`/treatments/${node.slug}`} activeClassName='active'>
               <div className='image-box'>
                 <img src={node.image.fluid.srcSet} alt={node.image.alt}/>
