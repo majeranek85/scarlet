@@ -26,7 +26,8 @@ exports.createPages = async({graphql, actions}) => {
     allDatoCmsCategory {
       edges {
         node {
-          slug
+          slug,
+          id
         }
       }
     }

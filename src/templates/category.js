@@ -12,7 +12,7 @@ import { theme } from '../utils/theme';
 
 const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
   return (
-    <Layout key={slug}>
+    <Layout>
       <SEO title={category.title} />
       <StyledContainer>
         <aside>
@@ -22,8 +22,8 @@ const CategoryPage = ({pageContext: { slug }, data: { category }}) => {
         <div className='subpage-wrapper'>
           <PageTitle title={category.title} />
           <StyledItems>
-            {category.treatments.map( item => (
-              <div key={item.slug}>
+            {category.treatments.map( (item, id) => (
+              <div key={id}>
                 <h2>{item.name}</h2>
                 <div dangerouslySetInnerHTML={{__html: item.descriptionNode.childMarkdownRemark.html}}/>
                 <Accordion
