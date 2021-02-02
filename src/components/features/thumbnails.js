@@ -52,7 +52,7 @@ const StyledContainer = styled.div`
 const StyledImageWrapper = styled.a`
   display: block;
   height: 360px;
-  max-width: 360px;
+  width: 360px;
   padding: 5px;
   position: relative;
   margin: 10px;
